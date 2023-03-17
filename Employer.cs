@@ -18,7 +18,7 @@ namespace CoffeShop
         private int id = -1;
         int totalPrice = 0;
 
-        DatabaseClass1 dataBase = new DatabaseClass1();
+        DatabaseClass dataBase = new DatabaseClass();
 
         List<int> rowIndex = new List<int>();
         List<DateTime> dateList= new List<DateTime>();
@@ -192,7 +192,7 @@ namespace CoffeShop
             string command;
             for (int i = 0; i < id.Count; i++)
             {
-                string z = DatabaseClass1.DateTimeFormat(dates[i]);
+                string z = DatabaseClass.DateTimeFormat(dates[i]);
                 command = $"INSERT INTO SalesProducts (IdSaleProduct,CountSaleProduct,TimeSaleProduct,PriceSalesProduct)VALUES ('{id[i]}','{count[i]}','{z}','{price[i]}')";
                 dataBase.SendCommand(command);
             }

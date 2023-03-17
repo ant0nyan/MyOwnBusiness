@@ -17,9 +17,9 @@ namespace CoffeShop
         int profitNumTwo;
         int profit;
         private string startDate;
-        private string startDateDay =$"{DatabaseClass1.DateTimeFormat(DateTime.Today)}";
+        private string startDateDay =$"{DatabaseClass.DateTimeFormat(DateTime.Today)}";
 
-        private string dateNow = $"{DatabaseClass1.DateTimeFormat(DateTime.Now)}";
+        private string dateNow = $"{DatabaseClass.DateTimeFormat(DateTime.Now)}";
         private void todayButton_Click(object sender, EventArgs e)
         {
            
@@ -43,8 +43,8 @@ namespace CoffeShop
         }
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
-          string start=DatabaseClass1.DateTimeFormat( dateTimePicker1.Value);
-          string end= DatabaseClass1.DateTimeFormat(dateTimePicker2.Value);
+          string start=DatabaseClass.DateTimeFormat( dateTimePicker1.Value);
+          string end= DatabaseClass.DateTimeFormat(dateTimePicker2.Value);
 
             GetDateWithUserInputTime(start, end);
             GetProfit();
@@ -103,7 +103,7 @@ namespace CoffeShop
             string startDate = string.Empty;
             time = DateTime.Now;
             time = time.AddDays(days);
-            startDate = $"{DatabaseClass1.DateTimeFormat(time)}";
+            startDate = $"{DatabaseClass.DateTimeFormat(time)}";
             return startDate;
         }
 
@@ -125,15 +125,15 @@ namespace CoffeShop
         private void DayProfit()
         {
             time = DateTime.Today;
-            string timeWhene= DatabaseClass1.DateTimeFormat( time.AddDays(-1));
+            string timeWhene= DatabaseClass.DateTimeFormat( time.AddDays(-1));
           
             GetDateWithUserInputTime(timeWhene,startDateDay);
 
             profit = GetProfit();
-            CheckDateProfit(DatabaseClass1.DateTimeFormat(time));
+            CheckDateProfit(DatabaseClass.DateTimeFormat(time));
             if (hasFlagProfit==false)
             {
-                string command = $"INSERT INTO DayProfitTable (Day,Profit) VALUES ('{DatabaseClass1.DateTimeFormat(time)}','{profit}')";
+                string command = $"INSERT INTO DayProfitTable (Day,Profit) VALUES ('{DatabaseClass.DateTimeFormat(time)}','{profit}')";
                 dataBase.SendCommand(command);
             }
         }

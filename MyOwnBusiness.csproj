@@ -91,7 +91,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseClass1.cs" />
+    <Compile Include="DatabaseClass.cs" />
     <Compile Include="Employer.cs">
       <SubType>Form</SubType>
     </Compile>

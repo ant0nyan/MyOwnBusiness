@@ -50,7 +50,7 @@ namespace CoffeShop
     }
     public class CoffeShopSqlConnect :AuthenticationPanel
     {
-        DatabaseClass1 data = new DatabaseClass1();
+        DatabaseClass data = new DatabaseClass();
         public SqlDataReader SqlRead(string queryString)
         {
            

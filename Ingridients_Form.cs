@@ -15,7 +15,7 @@ namespace CoffeShop
 {
       public partial class Ingridients_Form : Form
       { 
-        DatabaseClass1 data = new DatabaseClass1();        
+        DatabaseClass data = new DatabaseClass();        
         static public bool flagAdder = false;
         public Ingridients_Form()
         {
@@ -24,7 +24,7 @@ namespace CoffeShop
         }
         private void IngridAdder() // avelacnuma listi mej
         {
-            DatabaseClass1 data = new DatabaseClass1();
+            DatabaseClass data = new DatabaseClass();
             
             string command = $" SELECT Id,Name,Count FROM ProductIngridients";//Ingridients_Form-i listi mej avelacnu pahy
 

@@ -28,7 +28,7 @@ namespace CoffeShop
     }
     public partial class AdminPanel : Form
     {
-        DatabaseClass1 dataBase = new DatabaseClass1();
+        DatabaseClass dataBase = new DatabaseClass();
 
         int selectidRow;
         int selectedRowFood;

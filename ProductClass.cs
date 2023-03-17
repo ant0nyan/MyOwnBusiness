@@ -33,7 +33,7 @@ namespace CoffeShop
         }
         static public void SendProductToBase(List<ProductIngridients> productsForSend,DateTime time)
         {
-            DatabaseClass1 data = new DatabaseClass1();
+            DatabaseClass data = new DatabaseClass();
             string dateTime = Convert.ToDateTime(time).ToString("MM-dd-yyyy HH:mm:ss");
             MessageBox.Show(dateTime);
 
