@@ -15,6 +15,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPanel));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.foodTabPage = new System.Windows.Forms.TabPage();
+            this.mcfnTextBox = new System.Windows.Forms.TextBox();
+            this.mcfnLabel = new System.Windows.Forms.Label();
+            this.gramButton = new Guna.UI2.WinForms.Guna2Button();
+            this.pieceButton = new Guna.UI2.WinForms.Guna2Button();
             this.foodSaveButton = new Guna.UI2.WinForms.Guna2Button();
             this.foodEditButton = new Guna.UI2.WinForms.Guna2Button();
             this.foodDeleteButton = new Guna.UI2.WinForms.Guna2Button();
@@ -68,6 +72,7 @@
             this.database1DataSet = new CoffeShop.Database1DataSet();
             this.productIngridientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productIngridientsTableAdapter = new CoffeShop.Database1DataSetTableAdapters.ProductIngridientsTableAdapter();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1.SuspendLayout();
             this.foodTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -95,6 +100,10 @@
             // foodTabPage
             // 
             this.foodTabPage.BackColor = System.Drawing.Color.White;
+            this.foodTabPage.Controls.Add(this.mcfnTextBox);
+            this.foodTabPage.Controls.Add(this.mcfnLabel);
+            this.foodTabPage.Controls.Add(this.gramButton);
+            this.foodTabPage.Controls.Add(this.pieceButton);
             this.foodTabPage.Controls.Add(this.foodSaveButton);
             this.foodTabPage.Controls.Add(this.foodEditButton);
             this.foodTabPage.Controls.Add(this.foodDeleteButton);
@@ -118,6 +127,59 @@
             this.foodTabPage.Size = new System.Drawing.Size(1278, 646);
             this.foodTabPage.TabIndex = 0;
             this.foodTabPage.Text = "Product";
+            // 
+            // mcfnTextBox
+            // 
+            this.mcfnTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.mcfnTextBox.Location = new System.Drawing.Point(183, 306);
+            this.mcfnTextBox.Name = "mcfnTextBox";
+            this.mcfnTextBox.Size = new System.Drawing.Size(100, 30);
+            this.mcfnTextBox.TabIndex = 34;
+            // 
+            // mcfnLabel
+            // 
+            this.mcfnLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.mcfnLabel.AutoSize = true;
+            this.mcfnLabel.Location = new System.Drawing.Point(101, 306);
+            this.mcfnLabel.Name = "mcfnLabel";
+            this.mcfnLabel.Size = new System.Drawing.Size(70, 25);
+            this.mcfnLabel.TabIndex = 33;
+            this.mcfnLabel.Text = "MCFN";
+            this.mcfnLabel.MouseHover += new System.EventHandler(this.mcfnLabel_MouseHover);
+            // 
+            // gramButton
+            // 
+            this.gramButton.BorderRadius = 7;
+            this.gramButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.gramButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.gramButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.gramButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.gramButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gramButton.ForeColor = System.Drawing.Color.White;
+            this.gramButton.Location = new System.Drawing.Point(379, 204);
+            this.gramButton.Name = "gramButton";
+            this.gramButton.Size = new System.Drawing.Size(65, 29);
+            this.gramButton.TabIndex = 32;
+            this.gramButton.Text = "Gram";
+            this.gramButton.Click += new System.EventHandler(this.gramButton_Click);
+            // 
+            // pieceButton
+            // 
+            this.pieceButton.BorderRadius = 7;
+            this.pieceButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.pieceButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.pieceButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.pieceButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.pieceButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.pieceButton.ForeColor = System.Drawing.Color.White;
+            this.pieceButton.Location = new System.Drawing.Point(308, 204);
+            this.pieceButton.Name = "pieceButton";
+            this.pieceButton.Size = new System.Drawing.Size(65, 29);
+            this.pieceButton.TabIndex = 31;
+            this.pieceButton.Text = "Piece";
+            this.pieceButton.Click += new System.EventHandler(this.pieceButton_Click);
             // 
             // foodSaveButton
             // 
@@ -862,5 +924,10 @@
         private Guna.UI2.WinForms.Guna2Button buttonSubmit;
         private System.Windows.Forms.Integration.ElementHost elementHost1;
         private LiveCharts.Wpf.CartesianChart cartesianChart1;
+        private Guna.UI2.WinForms.Guna2Button gramButton;
+        private Guna.UI2.WinForms.Guna2Button pieceButton;
+        private System.Windows.Forms.Label mcfnLabel;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.TextBox mcfnTextBox;
     }
 }

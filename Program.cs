@@ -16,7 +16,7 @@ namespace CoffeShop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AuthenticationPanel());
+            Application.Run(new AdminPanel());
         }
         
     }

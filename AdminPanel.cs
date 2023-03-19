@@ -32,6 +32,7 @@ namespace CoffeShop
 
         int selectidRow;
         int selectedRowFood;
+        byte pieceOrGram = 1;
 
         private void CreateColumns() //Syuneri sarqelu procesy
         {
@@ -67,7 +68,7 @@ namespace CoffeShop
             dataGridView1.CurrentCell = null;
 
         }
-       
+
         private void Form2_Load(object sender, EventArgs e)
         {
             //this.productIngridientsTableAdapter.Fill(this.database1DataSet.ProductIngridients);
@@ -76,7 +77,7 @@ namespace CoffeShop
             searchButtonFood.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\search.png");
             searchButton.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\search.png");
             string checkData = $"SELECT Id,Type,Name,Price FROM Product_Adder ";
-            string checkDataFood = $"SELECT Id,Type,Name,Count FROM ProductIngridients ";
+            string checkDataFood = $"SELECT Id,Type,Name,Count,MCFN FROM ProductIngridients ";
             CreateColumns();
             CreateColumnsFood();
             RefreashDatGrid(dataGridView1, checkData);
@@ -86,7 +87,7 @@ namespace CoffeShop
             LiveChartsConnectWithBase();
             sellingLabel.Text = " ";
             buyingLabel.Text = " ";
-            profitLabel.Text = " ";        }
+            profitLabel.Text = " "; }
         public AdminPanel()
         {
             InitializeComponent();
@@ -137,7 +138,7 @@ namespace CoffeShop
             int id = dataBase.GetLastId(addLastId); // product adderi verji idin
             if (Ingridients_Form.flagAdder == true)
             {
-               
+
                 if (int.TryParse(priceTextBox.Text, out price)) // verji idnery qtnum enq u 
                 {
                     var addDate = $"INSERT INTO Product_Adder (Id,Type,Name,Price)VALUES ('{id}',N'{type}',N'{name}',N'{price}')";
@@ -177,7 +178,7 @@ namespace CoffeShop
 
             while (read.Read())
             {
-                ReadSingleRows(dgw, read);  
+                ReadSingleRows(dgw, read);
             }
             read.Close();
 
@@ -317,11 +318,6 @@ namespace CoffeShop
         }
 
         
-
-        
-    }
+    }  
 }  
-
-    
-  
   

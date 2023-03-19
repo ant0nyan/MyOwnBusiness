@@ -8,41 +8,49 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Xml.Linq;
+using System.Drawing;
 
 namespace CoffeShop
 {
-    public partial class AdminPanel
+    public partial class AdminPanel : Form
     {
         bool hasFlag = false;
         bool hasFlagProfit = false;
+        bool hasFlagCount = false;
         public static  DateTime time = new DateTime();
+        public List<string> colorMCFN = new List<string>();
         private void foodAddButton_Click(object sender, EventArgs e)
         {
             string productType = foodTypeTextBox.Text;
             string productName = foodNameTextBox.Text;
             int productCount;
             int productPrice;
+            int productMCFN;
             CheckDate(productName);
             if (int.TryParse(foodPriceTextBox.Text, out productPrice) &&
-                 int.TryParse(foodCountTextBox.Text, out productCount))
+                int.TryParse(foodCountTextBox.Text, out productCount) && 
+                int.TryParse(mcfnTextBox.Text, out productMCFN) &&
+                hasFlagCount == true)
             {
                 if (hasFlag == false)
                 {
                     time = DateTime.Now;
-                    ProductIngridients.AddProduct(productType, productName, productCount, productPrice, time);
+                    ProductIngridients.AddProduct(productType, productName, productCount, productPrice, time,pieceOrGram,productMCFN);
                     hasFlag = true;
 
                 }
                 else
                 {
                     UpdateCountAndPrice(productPrice, productCount, productName);
-                }   
+                }
+                hasFlagCount = false;
             }
             else
             {
                 MessageBox.Show("The inpuded datas are in the wrong format", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+            
 
         }
         private void foodDeleteButton_Click(object sender, EventArgs e)
@@ -66,6 +74,9 @@ namespace CoffeShop
             foodNameTextBox.Text = "";
             foodCountTextBox.Text = "";
             foodPriceTextBox.Text = "";
+            mcfnTextBox.Text = "";
+            pieceButton.FillColor = Color.FromArgb(94, 148, 255);
+            gramButton.FillColor = Color.FromArgb(94, 148, 255);
         }
         private void foodSaveButton_Click(object sender, EventArgs e)
         {
@@ -80,22 +91,23 @@ namespace CoffeShop
             dataGridView2.Columns.Add("Type", "Տեսակը");
             dataGridView2.Columns.Add("Name", "Ապրանքի անունը");
             dataGridView2.Columns.Add("Count", "Քանակ");
-  
+            dataGridView2.Columns.Add("MCFN", "MCFN");
+
             dataGridView2.Columns.Add("IsNew", string.Empty);
             dataGridView2.Columns[0].Visible = false;
-            dataGridView2.Columns[4].Visible = false;
+            dataGridView2.Columns[5].Visible = false;
         }
 
         private void ReadSingleRowsFood(DataGridView dgw, IDataRecord record) // toxery avelacnelu procesy
         {
-            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetInt32(3),  RowState.ModifiedNew);
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetInt32(3), record.GetInt32(4),  RowState.ModifiedNew);
         }
 
         private void RefreashDatGridFood(DataGridView dgw, string checkData) // hramany katarelu u toxery lracnelu process
         {
             dgw.Rows.Clear();
 
-
+            CheckMCFNFromBase();
             SqlCommand command = new SqlCommand(checkData, dataBase.getConnection());
 
             dataBase.OpenConnecttion();
@@ -106,12 +118,14 @@ namespace CoffeShop
             {
                 ReadSingleRowsFood(dgw, dataReader);
             }
+           
             dataReader.Close();
+            ChangeRowColorByMCFN();
         }
 
         private void refreshButtonFoodPanel_Click(object sender, EventArgs e)
         {
-            string checkData = $"SELECT Id,Type,Name,Count FROM ProductIngridients ";
+            string checkData = $"SELECT Id,Type,Name,Count,MCFN FROM ProductIngridients ";
             RefreashDatGridFood(dataGridView2, checkData);
             CleareTextBoxesFood();
         }
@@ -126,7 +140,9 @@ namespace CoffeShop
                 foodTypeTextBox.Text = row.Cells[1].Value.ToString();
                 foodNameTextBox.Text = row.Cells[2].Value.ToString();
                 foodCountTextBox.Text = row.Cells[3].Value.ToString();
-                //foodPriceTextBox.Text = row.Cells[4].Value.ToString();
+                mcfnTextBox.Text = row.Cells[4].Value.ToString();
+
+
             }
 
         }
@@ -157,17 +173,18 @@ namespace CoffeShop
             var selectedRowIndex = dataGridView2.CurrentCell.RowIndex;
             var type = foodTypeTextBox.Text;
             var name = foodNameTextBox.Text;
-            int price;
+            int mcfn;
             int count;
             int id = Convert.ToInt32(dataGridView2.Rows[selectedRowIndex].Cells[0].Value);
 
             if (dataGridView2.Rows[selectedRowIndex].Cells[0].Value.ToString() != string.Empty)
             {
 
-                if (int.TryParse(foodCountTextBox.Text, out count))
+                if (int.TryParse(foodCountTextBox.Text, out count) && 
+                    int.TryParse(mcfnTextBox.Text, out mcfn))
                 {
-                    dataGridView2.Rows[selectedRowIndex].SetValues(id, type, name, count);
-                    dataGridView2.Rows[selectedRowIndex].Cells[4].Value = RowState.Modified;
+                    dataGridView2.Rows[selectedRowIndex].SetValues(id, type, name, count,mcfn);
+                    dataGridView2.Rows[selectedRowIndex].Cells[5].Value = RowState.Modified;
                 }
                 else
                     MessageBox.Show("Please Input number", "Invalid Format", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -184,7 +201,7 @@ namespace CoffeShop
 
             for (int i = 0; i < dataGridView2.Rows.Count; i++)
             {
-                var rowState = (RowState)dataGridView2.Rows[i].Cells[4].Value;
+                var rowState = (RowState)dataGridView2.Rows[i].Cells[5].Value;
 
                 if (rowState == RowState.Existed)
                     continue;
@@ -195,8 +212,8 @@ namespace CoffeShop
                     var type = dataGridView2.Rows[i].Cells[1].Value.ToString();
                     var name = dataGridView2.Rows[i].Cells[2].Value.ToString();
                     var count = dataGridView2.Rows[i].Cells[3].Value.ToString();
-                    //var price = dataGridView2.Rows[i].Cells[4].Value.ToString();
-                    var changeDate = $"UPDATE ProductIngridients SET Type= N'{type}',Name= N'{name}',Count= N'{count}' WHERE Id='{id}'";
+                    var mcfn = dataGridView2.Rows[i].Cells[4].Value.ToString();
+                    var changeDate = $"UPDATE ProductIngridients SET Type= N'{type}',Name= N'{name}',Count= N'{count}',MCFN='{mcfn}' WHERE Id='{id}'";
 
                     dataBase.SendCommand(changeDate);
                 }
@@ -252,6 +269,56 @@ namespace CoffeShop
                 MessageBox.Show("This product has in base!!! ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
                       
+        }
+        private void pieceButton_Click(object sender, EventArgs e)
+        {
+                hasFlagCount = true;
+                pieceOrGram = 0;
+                gramButton.FillColor = Color.FromArgb(94, 148, 255);
+                pieceButton.FillColor = Color.FromArgb(0, 192, 0);
+        }
+
+        private void gramButton_Click(object sender, EventArgs e)
+        {
+            hasFlagCount = true;
+            gramButton.FillColor = Color.FromArgb(0, 192, 0);       
+            pieceOrGram = 1;
+            pieceButton.FillColor = Color.FromArgb(94, 148, 255);
+        }
+
+        private void mcfnLabel_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Minimum count for Notification", mcfnLabel);
+        }
+        private void CheckMCFNFromBase()
+        {
+            string command = $"SELECT Name FROM ProductIngridients WHERE MCFN>Count";
+            
+            
+
+            SqlDataReader read = dataBase.GetDataReader(command);                       
+
+            while (read.Read())
+            {
+                colorMCFN.Add(read.GetString(0));
+            }
+            read.Close();
+
+        }
+        private void ChangeRowColorByMCFN()
+        {
+            foreach (DataGridViewRow row in dataGridView2.Rows)
+            {
+                for (int i = 0; i < colorMCFN.Count; i++)
+                {
+                    if (row.Cells[2].Value.ToString() == colorMCFN[i])
+                    {
+                        row.DefaultCellStyle.BackColor = Color.Red;
+                        row.DefaultCellStyle.ForeColor = Color.White;
+                    }
+                }
+            }
+            colorMCFN.Clear();
         }
     }
 }
