@@ -33,6 +33,9 @@ namespace CoffeShop
         int selectidRow;
         int selectedRowFood;
         byte pieceOrGram = 1;
+        string checkData = $"SELECT Id,Type,Name,Price FROM Product_Adder ";
+        string checkDataFood = $"SELECT Id,Type,Name,Count,MCFN FROM ProductIngridients ";
+        string checkDataWriteOut = $"SELECT Id,Name,Count,Date FROM WriteOut ";
 
         private void CreateColumns() //Syuneri sarqelu procesy
         {
@@ -71,20 +74,21 @@ namespace CoffeShop
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.WriteOut". При необходимости она может быть перемещена или удалена.
+            this.writeOutTableAdapter.Fill(this.databaseDataSet.WriteOut);
             //this.productIngridientsTableAdapter.Fill(this.database1DataSet.ProductIngridients);
-            refreshButton.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\refresh.png");
-            refreshButtonFoodPanel.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\refresh.png");
-            searchButtonFood.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\search.png");
-            searchButton.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\search.png");
-            string checkData = $"SELECT Id,Type,Name,Price FROM Product_Adder ";
-            string checkDataFood = $"SELECT Id,Type,Name,Count,MCFN FROM ProductIngridients ";
+            ImageLoad();
             CreateColumns();
             CreateColumnsFood();
+            CreateColumnsWriteOut();
             RefreashDatGrid(dataGridView1, checkData);
             RefreashDatGridFood(dataGridView2, checkDataFood);
+            RefreashDatGridWriteOut(dataGridView3,checkDataWriteOut);
             UnVisibleFirstRow(dataGridView1);
             DayProfit();//day profit tablum tvyalneri avelacum hetaga live charti hamar
             LiveChartsConnectWithBase();
+            productListBoxAdder();
+            dataGridView3.Columns[0].Visible = false;
             sellingLabel.Text = " ";
             buyingLabel.Text = " ";
             profitLabel.Text = " "; }
@@ -317,7 +321,17 @@ namespace CoffeShop
             idList.Clear();
         }
 
-        
+        private void updateButtonWritingOut_Click(object sender, EventArgs e)
+        {
+            RefreashDatGridWriteOut(dataGridView3, checkDataWriteOut);
+        }
+        private void ImageLoad()
+        {
+            refreshButton.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\refresh.png");
+            updateButtonWritingOut.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\refresh.png");
+            refreshButtonFoodPanel.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\refresh.png");
+            searchButtonFood.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\search.png");
+            searchButton.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\search.png");
+        }
     }  
 }  
-  

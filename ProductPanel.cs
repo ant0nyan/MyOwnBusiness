@@ -50,7 +50,8 @@ namespace CoffeShop
                 MessageBox.Show("The inpuded datas are in the wrong format", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-            
+
+            RefreashDatGridFood(dataGridView2, checkDataFood);
 
         }
         private void foodDeleteButton_Click(object sender, EventArgs e)
@@ -83,6 +84,7 @@ namespace CoffeShop
             UpdateDataBaseFood();
 
             UpdateDataBaseDeleted(dataGridView2, "ProductIngridients");
+            RefreashDatGridFood(dataGridView2, checkDataFood);
             CleareTextBoxesFood();
         }
         private void CreateColumnsFood() //Syuneri sarqelu procesy
@@ -116,6 +118,7 @@ namespace CoffeShop
 
             while (dataReader.Read())
             {
+                
                 ReadSingleRowsFood(dgw, dataReader);
             }
            
@@ -141,7 +144,6 @@ namespace CoffeShop
                 foodNameTextBox.Text = row.Cells[2].Value.ToString();
                 foodCountTextBox.Text = row.Cells[3].Value.ToString();
                 mcfnTextBox.Text = row.Cells[4].Value.ToString();
-
 
             }
 

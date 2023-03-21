@@ -52,7 +52,7 @@
             // 
             this.ingridListBox.FormattingEnabled = true;
             this.ingridListBox.ItemHeight = 16;
-            this.ingridListBox.Location = new System.Drawing.Point(247, 82);
+            this.ingridListBox.Location = new System.Drawing.Point(249, 82);
             this.ingridListBox.Name = "ingridListBox";
             this.ingridListBox.Size = new System.Drawing.Size(152, 500);
             this.ingridListBox.TabIndex = 3;

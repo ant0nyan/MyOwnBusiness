@@ -69,16 +69,32 @@
             this.monthButton = new Guna.UI2.WinForms.Guna2Button();
             this.sevenDaysButton = new Guna.UI2.WinForms.Guna2Button();
             this.todayButton = new Guna.UI2.WinForms.Guna2Button();
+            this.writingOutTabPage = new System.Windows.Forms.TabPage();
+            this.updateButtonWritingOut = new System.Windows.Forms.Button();
+            this.searchWritingOutButton = new Guna.UI2.WinForms.Guna2Button();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.ingridCountTextBox = new System.Windows.Forms.TextBox();
+            this.productListBox = new System.Windows.Forms.ListBox();
+            this.writingOut = new Guna.UI2.WinForms.Guna2Button();
+            this.writeOutBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSet = new CoffeShop.DatabaseDataSet();
             this.database1DataSet = new CoffeShop.Database1DataSet();
             this.productIngridientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productIngridientsTableAdapter = new CoffeShop.Database1DataSetTableAdapters.ProductIngridientsTableAdapter();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.writeOutTableAdapter = new CoffeShop.DatabaseDataSetTableAdapters.WriteOutTableAdapter();
             this.tabControl1.SuspendLayout();
             this.foodTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.productAddTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.analyseTabPage.SuspendLayout();
+            this.writingOutTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.writeOutBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productIngridientsBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -91,6 +107,7 @@
             this.tabControl1.Controls.Add(this.foodTabPage);
             this.tabControl1.Controls.Add(this.productAddTabPage);
             this.tabControl1.Controls.Add(this.analyseTabPage);
+            this.tabControl1.Controls.Add(this.writingOutTabPage);
             this.tabControl1.Location = new System.Drawing.Point(1, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -132,7 +149,7 @@
             // 
             this.mcfnTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.mcfnTextBox.Location = new System.Drawing.Point(183, 306);
+            this.mcfnTextBox.Location = new System.Drawing.Point(116, 286);
             this.mcfnTextBox.Name = "mcfnTextBox";
             this.mcfnTextBox.Size = new System.Drawing.Size(100, 30);
             this.mcfnTextBox.TabIndex = 34;
@@ -142,7 +159,7 @@
             this.mcfnLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.mcfnLabel.AutoSize = true;
-            this.mcfnLabel.Location = new System.Drawing.Point(101, 306);
+            this.mcfnLabel.Location = new System.Drawing.Point(15, 284);
             this.mcfnLabel.Name = "mcfnLabel";
             this.mcfnLabel.Size = new System.Drawing.Size(70, 25);
             this.mcfnLabel.TabIndex = 33;
@@ -156,11 +173,12 @@
             this.gramButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.gramButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.gramButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.gramButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.gramButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gramButton.ForeColor = System.Drawing.Color.White;
-            this.gramButton.Location = new System.Drawing.Point(379, 204);
+            this.gramButton.Location = new System.Drawing.Point(323, 229);
             this.gramButton.Name = "gramButton";
-            this.gramButton.Size = new System.Drawing.Size(65, 29);
+            this.gramButton.Size = new System.Drawing.Size(81, 29);
             this.gramButton.TabIndex = 32;
             this.gramButton.Text = "Gram";
             this.gramButton.Click += new System.EventHandler(this.gramButton_Click);
@@ -172,11 +190,12 @@
             this.pieceButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.pieceButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.pieceButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.pieceButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.pieceButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pieceButton.ForeColor = System.Drawing.Color.White;
-            this.pieceButton.Location = new System.Drawing.Point(308, 204);
+            this.pieceButton.Location = new System.Drawing.Point(234, 229);
             this.pieceButton.Name = "pieceButton";
-            this.pieceButton.Size = new System.Drawing.Size(65, 29);
+            this.pieceButton.Size = new System.Drawing.Size(83, 29);
             this.pieceButton.TabIndex = 31;
             this.pieceButton.Text = "Piece";
             this.pieceButton.Click += new System.EventHandler(this.pieceButton_Click);
@@ -307,7 +326,7 @@
             // 
             this.foodCountTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.foodCountTextBox.Location = new System.Drawing.Point(183, 203);
+            this.foodCountTextBox.Location = new System.Drawing.Point(116, 183);
             this.foodCountTextBox.Name = "foodCountTextBox";
             this.foodCountTextBox.Size = new System.Drawing.Size(100, 30);
             this.foodCountTextBox.TabIndex = 18;
@@ -317,7 +336,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(101, 203);
+            this.label8.Location = new System.Drawing.Point(15, 181);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 25);
             this.label8.TabIndex = 17;
@@ -328,7 +347,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(101, 256);
+            this.label5.Location = new System.Drawing.Point(15, 234);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 25);
             this.label5.TabIndex = 16;
@@ -338,7 +357,7 @@
             // 
             this.foodPriceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.foodPriceTextBox.Location = new System.Drawing.Point(183, 251);
+            this.foodPriceTextBox.Location = new System.Drawing.Point(116, 231);
             this.foodPriceTextBox.Name = "foodPriceTextBox";
             this.foodPriceTextBox.Size = new System.Drawing.Size(100, 30);
             this.foodPriceTextBox.TabIndex = 15;
@@ -347,7 +366,7 @@
             // 
             this.foodNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.foodNameTextBox.Location = new System.Drawing.Point(183, 151);
+            this.foodNameTextBox.Location = new System.Drawing.Point(116, 131);
             this.foodNameTextBox.Name = "foodNameTextBox";
             this.foodNameTextBox.Size = new System.Drawing.Size(100, 30);
             this.foodNameTextBox.TabIndex = 14;
@@ -357,7 +376,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(101, 151);
+            this.label6.Location = new System.Drawing.Point(15, 129);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 25);
             this.label6.TabIndex = 13;
@@ -368,7 +387,7 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(101, 95);
+            this.label7.Location = new System.Drawing.Point(15, 73);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 25);
             this.label7.TabIndex = 12;
@@ -378,7 +397,7 @@
             // 
             this.foodTypeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.foodTypeTextBox.Location = new System.Drawing.Point(183, 95);
+            this.foodTypeTextBox.Location = new System.Drawing.Point(116, 75);
             this.foodTypeTextBox.Name = "foodTypeTextBox";
             this.foodTypeTextBox.Size = new System.Drawing.Size(100, 30);
             this.foodTypeTextBox.TabIndex = 11;
@@ -820,6 +839,129 @@
             this.todayButton.Text = "Today";
             this.todayButton.Click += new System.EventHandler(this.todayButton_Click);
             // 
+            // writingOutTabPage
+            // 
+            this.writingOutTabPage.Controls.Add(this.updateButtonWritingOut);
+            this.writingOutTabPage.Controls.Add(this.searchWritingOutButton);
+            this.writingOutTabPage.Controls.Add(this.dateTimePicker4);
+            this.writingOutTabPage.Controls.Add(this.dateTimePicker3);
+            this.writingOutTabPage.Controls.Add(this.dataGridView3);
+            this.writingOutTabPage.Controls.Add(this.ingridCountTextBox);
+            this.writingOutTabPage.Controls.Add(this.productListBox);
+            this.writingOutTabPage.Controls.Add(this.writingOut);
+            this.writingOutTabPage.Location = new System.Drawing.Point(4, 25);
+            this.writingOutTabPage.Name = "writingOutTabPage";
+            this.writingOutTabPage.Size = new System.Drawing.Size(1278, 646);
+            this.writingOutTabPage.TabIndex = 4;
+            this.writingOutTabPage.Text = "Writing Out";
+            this.writingOutTabPage.UseVisualStyleBackColor = true;
+            // 
+            // updateButtonWritingOut
+            // 
+            this.updateButtonWritingOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.updateButtonWritingOut.BackColor = System.Drawing.Color.Transparent;
+            this.updateButtonWritingOut.Location = new System.Drawing.Point(778, 496);
+            this.updateButtonWritingOut.Name = "updateButtonWritingOut";
+            this.updateButtonWritingOut.Size = new System.Drawing.Size(40, 30);
+            this.updateButtonWritingOut.TabIndex = 35;
+            this.updateButtonWritingOut.UseVisualStyleBackColor = false;
+            this.updateButtonWritingOut.Click += new System.EventHandler(this.updateButtonWritingOut_Click);
+            // 
+            // searchWritingOutButton
+            // 
+            this.searchWritingOutButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.searchWritingOutButton.Animated = true;
+            this.searchWritingOutButton.BorderRadius = 12;
+            this.searchWritingOutButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.searchWritingOutButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.searchWritingOutButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.searchWritingOutButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.searchWritingOutButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.searchWritingOutButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchWritingOutButton.ForeColor = System.Drawing.Color.White;
+            this.searchWritingOutButton.Location = new System.Drawing.Point(723, 550);
+            this.searchWritingOutButton.Name = "searchWritingOutButton";
+            this.searchWritingOutButton.Size = new System.Drawing.Size(154, 47);
+            this.searchWritingOutButton.TabIndex = 34;
+            this.searchWritingOutButton.Text = "Search";
+            this.searchWritingOutButton.Click += new System.EventHandler(this.searchWritingOutButton_Click);
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.Location = new System.Drawing.Point(1015, 498);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker4.TabIndex = 33;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Location = new System.Drawing.Point(417, 498);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker3.TabIndex = 32;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(417, 32);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowHeadersWidth = 51;
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(798, 440);
+            this.dataGridView3.TabIndex = 31;
+            // 
+            // ingridCountTextBox
+            // 
+            this.ingridCountTextBox.Location = new System.Drawing.Point(93, 500);
+            this.ingridCountTextBox.Name = "ingridCountTextBox";
+            this.ingridCountTextBox.Size = new System.Drawing.Size(144, 22);
+            this.ingridCountTextBox.TabIndex = 30;
+            // 
+            // productListBox
+            // 
+            this.productListBox.FormattingEnabled = true;
+            this.productListBox.ItemHeight = 16;
+            this.productListBox.Location = new System.Drawing.Point(93, 32);
+            this.productListBox.Name = "productListBox";
+            this.productListBox.Size = new System.Drawing.Size(144, 324);
+            this.productListBox.TabIndex = 29;
+            // 
+            // writingOut
+            // 
+            this.writingOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.writingOut.Animated = true;
+            this.writingOut.BorderRadius = 12;
+            this.writingOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.writingOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.writingOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.writingOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.writingOut.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.writingOut.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.writingOut.ForeColor = System.Drawing.Color.White;
+            this.writingOut.Location = new System.Drawing.Point(93, 550);
+            this.writingOut.Name = "writingOut";
+            this.writingOut.Size = new System.Drawing.Size(154, 47);
+            this.writingOut.TabIndex = 28;
+            this.writingOut.Text = "Writing Out";
+            this.writingOut.Click += new System.EventHandler(this.writingOut_Click);
+            // 
+            // writeOutBindingSource
+            // 
+            this.writeOutBindingSource.DataMember = "WriteOut";
+            this.writeOutBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // databaseDataSet
+            // 
+            this.databaseDataSet.DataSetName = "DatabaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // database1DataSet
             // 
             this.database1DataSet.DataSetName = "Database1DataSet";
@@ -834,11 +976,14 @@
             // 
             this.productIngridientsTableAdapter.ClearBeforeFill = true;
             // 
+            // writeOutTableAdapter
+            // 
+            this.writeOutTableAdapter.ClearBeforeFill = true;
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1284, 666);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -858,6 +1003,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.analyseTabPage.ResumeLayout(false);
             this.analyseTabPage.PerformLayout();
+            this.writingOutTabPage.ResumeLayout(false);
+            this.writingOutTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.writeOutBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productIngridientsBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -929,5 +1079,17 @@
         private System.Windows.Forms.Label mcfnLabel;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TextBox mcfnTextBox;
+        private System.Windows.Forms.TabPage writingOutTabPage;
+        private System.Windows.Forms.TextBox ingridCountTextBox;
+        private System.Windows.Forms.ListBox productListBox;
+        private Guna.UI2.WinForms.Guna2Button writingOut;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private DatabaseDataSet databaseDataSet;
+        private System.Windows.Forms.BindingSource writeOutBindingSource;
+        private DatabaseDataSetTableAdapters.WriteOutTableAdapter writeOutTableAdapter;
+        private Guna.UI2.WinForms.Guna2Button searchWritingOutButton;
+        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.Button updateButtonWritingOut;
     }
 }
