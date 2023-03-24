@@ -78,6 +78,43 @@
             this.ingridCountTextBox = new System.Windows.Forms.TextBox();
             this.productListBox = new System.Windows.Forms.ListBox();
             this.writingOut = new Guna.UI2.WinForms.Guna2Button();
+            this.priceCalculator = new System.Windows.Forms.TabPage();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.otherTextBox = new System.Windows.Forms.TextBox();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.showProfit = new System.Windows.Forms.Label();
+            this.showTotalPrice = new System.Windows.Forms.Label();
+            this.calculateButton = new Guna.UI2.WinForms.Guna2Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.workDayTextBox = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.costPriceProductTextBox = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.incomeTaxTextBox = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.profitTextBox = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.minCountOfSalesTextBox = new System.Windows.Forms.TextBox();
+            this.saleProductCount = new System.Windows.Forms.Label();
+            this.saleProductCountTextBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.constTextBox = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.amortizationTextBox = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.comunalTextBox = new System.Windows.Forms.TextBox();
+            this.Salary = new System.Windows.Forms.Label();
+            this.salaryTextBox = new System.Windows.Forms.TextBox();
+            this.Rent = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.rentTextBox = new System.Windows.Forms.TextBox();
             this.writeOutBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSet = new CoffeShop.DatabaseDataSet();
             this.database1DataSet = new CoffeShop.Database1DataSet();
@@ -85,6 +122,8 @@
             this.productIngridientsTableAdapter = new CoffeShop.Database1DataSetTableAdapters.ProductIngridientsTableAdapter();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.writeOutTableAdapter = new CoffeShop.DatabaseDataSetTableAdapters.WriteOutTableAdapter();
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1.SuspendLayout();
             this.foodTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -93,6 +132,7 @@
             this.analyseTabPage.SuspendLayout();
             this.writingOutTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.priceCalculator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.writeOutBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
@@ -108,6 +148,7 @@
             this.tabControl1.Controls.Add(this.productAddTabPage);
             this.tabControl1.Controls.Add(this.analyseTabPage);
             this.tabControl1.Controls.Add(this.writingOutTabPage);
+            this.tabControl1.Controls.Add(this.priceCalculator);
             this.tabControl1.Location = new System.Drawing.Point(1, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -858,7 +899,7 @@
             // 
             // updateButtonWritingOut
             // 
-            this.updateButtonWritingOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.updateButtonWritingOut.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.updateButtonWritingOut.BackColor = System.Drawing.Color.Transparent;
             this.updateButtonWritingOut.Location = new System.Drawing.Point(778, 496);
             this.updateButtonWritingOut.Name = "updateButtonWritingOut";
@@ -869,7 +910,7 @@
             // 
             // searchWritingOutButton
             // 
-            this.searchWritingOutButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.searchWritingOutButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.searchWritingOutButton.Animated = true;
             this.searchWritingOutButton.BorderRadius = 12;
             this.searchWritingOutButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -888,6 +929,7 @@
             // 
             // dateTimePicker4
             // 
+            this.dateTimePicker4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.dateTimePicker4.Location = new System.Drawing.Point(1015, 498);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(200, 22);
@@ -895,6 +937,7 @@
             // 
             // dateTimePicker3
             // 
+            this.dateTimePicker3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.dateTimePicker3.Location = new System.Drawing.Point(417, 498);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(200, 22);
@@ -919,6 +962,7 @@
             // 
             // ingridCountTextBox
             // 
+            this.ingridCountTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ingridCountTextBox.Location = new System.Drawing.Point(93, 500);
             this.ingridCountTextBox.Name = "ingridCountTextBox";
             this.ingridCountTextBox.Size = new System.Drawing.Size(144, 22);
@@ -947,10 +991,419 @@
             this.writingOut.ForeColor = System.Drawing.Color.White;
             this.writingOut.Location = new System.Drawing.Point(93, 550);
             this.writingOut.Name = "writingOut";
-            this.writingOut.Size = new System.Drawing.Size(154, 47);
+            this.writingOut.Size = new System.Drawing.Size(144, 47);
             this.writingOut.TabIndex = 28;
             this.writingOut.Text = "Writing Out";
             this.writingOut.Click += new System.EventHandler(this.writingOut_Click);
+            // 
+            // priceCalculator
+            // 
+            this.priceCalculator.Controls.Add(this.label30);
+            this.priceCalculator.Controls.Add(this.label29);
+            this.priceCalculator.Controls.Add(this.label28);
+            this.priceCalculator.Controls.Add(this.label27);
+            this.priceCalculator.Controls.Add(this.label25);
+            this.priceCalculator.Controls.Add(this.label77);
+            this.priceCalculator.Controls.Add(this.otherTextBox);
+            this.priceCalculator.Controls.Add(this.clearButton);
+            this.priceCalculator.Controls.Add(this.showProfit);
+            this.priceCalculator.Controls.Add(this.showTotalPrice);
+            this.priceCalculator.Controls.Add(this.calculateButton);
+            this.priceCalculator.Controls.Add(this.label24);
+            this.priceCalculator.Controls.Add(this.workDayTextBox);
+            this.priceCalculator.Controls.Add(this.label23);
+            this.priceCalculator.Controls.Add(this.label19);
+            this.priceCalculator.Controls.Add(this.costPriceProductTextBox);
+            this.priceCalculator.Controls.Add(this.label20);
+            this.priceCalculator.Controls.Add(this.incomeTaxTextBox);
+            this.priceCalculator.Controls.Add(this.label21);
+            this.priceCalculator.Controls.Add(this.profitTextBox);
+            this.priceCalculator.Controls.Add(this.label22);
+            this.priceCalculator.Controls.Add(this.minCountOfSalesTextBox);
+            this.priceCalculator.Controls.Add(this.saleProductCount);
+            this.priceCalculator.Controls.Add(this.saleProductCountTextBox);
+            this.priceCalculator.Controls.Add(this.label15);
+            this.priceCalculator.Controls.Add(this.label18);
+            this.priceCalculator.Controls.Add(this.constTextBox);
+            this.priceCalculator.Controls.Add(this.label17);
+            this.priceCalculator.Controls.Add(this.amortizationTextBox);
+            this.priceCalculator.Controls.Add(this.label16);
+            this.priceCalculator.Controls.Add(this.comunalTextBox);
+            this.priceCalculator.Controls.Add(this.Salary);
+            this.priceCalculator.Controls.Add(this.salaryTextBox);
+            this.priceCalculator.Controls.Add(this.Rent);
+            this.priceCalculator.Controls.Add(this.label14);
+            this.priceCalculator.Controls.Add(this.rentTextBox);
+            this.priceCalculator.Location = new System.Drawing.Point(4, 25);
+            this.priceCalculator.Name = "priceCalculator";
+            this.priceCalculator.Size = new System.Drawing.Size(1278, 646);
+            this.priceCalculator.TabIndex = 5;
+            this.priceCalculator.Text = "Price Calculator";
+            this.priceCalculator.UseVisualStyleBackColor = true;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.Red;
+            this.label30.Location = new System.Drawing.Point(300, 448);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(20, 25);
+            this.label30.TabIndex = 68;
+            this.label30.Text = "*";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.Red;
+            this.label29.Location = new System.Drawing.Point(300, 495);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(20, 25);
+            this.label29.TabIndex = 67;
+            this.label29.Text = "*";
+            // 
+            // label28
+            // 
+            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.Red;
+            this.label28.Location = new System.Drawing.Point(1146, 128);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(20, 25);
+            this.label28.TabIndex = 66;
+            this.label28.Text = "*";
+            // 
+            // label27
+            // 
+            this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.Red;
+            this.label27.Location = new System.Drawing.Point(846, 120);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(20, 25);
+            this.label27.TabIndex = 65;
+            this.label27.Text = "*";
+            // 
+            // label25
+            // 
+            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.Red;
+            this.label25.Location = new System.Drawing.Point(846, 237);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(20, 25);
+            this.label25.TabIndex = 63;
+            this.label25.Text = "*";
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label77.Location = new System.Drawing.Point(7, 397);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(61, 25);
+            this.label77.TabIndex = 62;
+            this.label77.Text = "Other";
+            // 
+            // otherTextBox
+            // 
+            this.otherTextBox.Location = new System.Drawing.Point(150, 397);
+            this.otherTextBox.Multiline = true;
+            this.otherTextBox.Name = "otherTextBox";
+            this.otherTextBox.Size = new System.Drawing.Size(144, 29);
+            this.otherTextBox.TabIndex = 61;
+            // 
+            // clearButton
+            // 
+            this.clearButton.BackColor = System.Drawing.Color.Transparent;
+            this.clearButton.Location = new System.Drawing.Point(12, 66);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(40, 30);
+            this.clearButton.TabIndex = 60;
+            this.clearButton.UseVisualStyleBackColor = false;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            this.clearButton.MouseHover += new System.EventHandler(this.clearButton_MouseHover);
+            // 
+            // showProfit
+            // 
+            this.showProfit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.showProfit.AutoSize = true;
+            this.showProfit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showProfit.Location = new System.Drawing.Point(691, 377);
+            this.showProfit.Name = "showProfit";
+            this.showProfit.Size = new System.Drawing.Size(0, 25);
+            this.showProfit.TabIndex = 59;
+            // 
+            // showTotalPrice
+            // 
+            this.showTotalPrice.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.showTotalPrice.AutoSize = true;
+            this.showTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showTotalPrice.Location = new System.Drawing.Point(448, 377);
+            this.showTotalPrice.Name = "showTotalPrice";
+            this.showTotalPrice.Size = new System.Drawing.Size(0, 25);
+            this.showTotalPrice.TabIndex = 58;
+            // 
+            // calculateButton
+            // 
+            this.calculateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.calculateButton.Animated = true;
+            this.calculateButton.BorderRadius = 13;
+            this.calculateButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.calculateButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.calculateButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.calculateButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.calculateButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.calculateButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calculateButton.ForeColor = System.Drawing.Color.White;
+            this.calculateButton.Location = new System.Drawing.Point(893, 448);
+            this.calculateButton.Name = "calculateButton";
+            this.calculateButton.Size = new System.Drawing.Size(269, 40);
+            this.calculateButton.TabIndex = 57;
+            this.calculateButton.Text = "Calculate";
+            this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(7, 495);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(109, 25);
+            this.label24.TabIndex = 56;
+            this.label24.Text = "Work Days";
+            // 
+            // workDayTextBox
+            // 
+            this.workDayTextBox.Location = new System.Drawing.Point(150, 495);
+            this.workDayTextBox.Multiline = true;
+            this.workDayTextBox.Name = "workDayTextBox";
+            this.workDayTextBox.Size = new System.Drawing.Size(144, 29);
+            this.workDayTextBox.TabIndex = 55;
+            // 
+            // label23
+            // 
+            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(702, 72);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(115, 25);
+            this.label23.TabIndex = 54;
+            this.label23.Text = "1 PC/PART";
+            // 
+            // label19
+            // 
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(437, 237);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(217, 25);
+            this.label19.TabIndex = 53;
+            this.label19.Text = "One Product Cost Price";
+            // 
+            // costPriceProductTextBox
+            // 
+            this.costPriceProductTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.costPriceProductTextBox.Location = new System.Drawing.Point(696, 233);
+            this.costPriceProductTextBox.Multiline = true;
+            this.costPriceProductTextBox.Name = "costPriceProductTextBox";
+            this.costPriceProductTextBox.Size = new System.Drawing.Size(144, 29);
+            this.costPriceProductTextBox.TabIndex = 52;
+            // 
+            // label20
+            // 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(437, 184);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(138, 25);
+            this.label20.TabIndex = 51;
+            this.label20.Text = "Income Tax %";
+            // 
+            // incomeTaxTextBox
+            // 
+            this.incomeTaxTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.incomeTaxTextBox.Location = new System.Drawing.Point(696, 180);
+            this.incomeTaxTextBox.Multiline = true;
+            this.incomeTaxTextBox.Name = "incomeTaxTextBox";
+            this.incomeTaxTextBox.Size = new System.Drawing.Size(144, 29);
+            this.incomeTaxTextBox.TabIndex = 50;
+            // 
+            // label21
+            // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(437, 126);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(79, 25);
+            this.label21.TabIndex = 49;
+            this.label21.Text = "Profit %";
+            // 
+            // profitTextBox
+            // 
+            this.profitTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.profitTextBox.Location = new System.Drawing.Point(696, 122);
+            this.profitTextBox.Multiline = true;
+            this.profitTextBox.Name = "profitTextBox";
+            this.profitTextBox.Size = new System.Drawing.Size(144, 29);
+            this.profitTextBox.TabIndex = 48;
+            // 
+            // label22
+            // 
+            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(979, 71);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(183, 25);
+            this.label22.TabIndex = 47;
+            this.label22.Text = "Min Count Of Sales";
+            // 
+            // minCountOfSalesTextBox
+            // 
+            this.minCountOfSalesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minCountOfSalesTextBox.Location = new System.Drawing.Point(996, 128);
+            this.minCountOfSalesTextBox.Multiline = true;
+            this.minCountOfSalesTextBox.Name = "minCountOfSalesTextBox";
+            this.minCountOfSalesTextBox.Size = new System.Drawing.Size(144, 29);
+            this.minCountOfSalesTextBox.TabIndex = 46;
+            // 
+            // saleProductCount
+            // 
+            this.saleProductCount.AutoSize = true;
+            this.saleProductCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saleProductCount.Location = new System.Drawing.Point(7, 448);
+            this.saleProductCount.Name = "saleProductCount";
+            this.saleProductCount.Size = new System.Drawing.Size(137, 25);
+            this.saleProductCount.TabIndex = 45;
+            this.saleProductCount.Text = "Product Count";
+            // 
+            // saleProductCountTextBox
+            // 
+            this.saleProductCountTextBox.Location = new System.Drawing.Point(150, 448);
+            this.saleProductCountTextBox.Multiline = true;
+            this.saleProductCountTextBox.Name = "saleProductCountTextBox";
+            this.saleProductCountTextBox.Size = new System.Drawing.Size(144, 29);
+            this.saleProductCountTextBox.TabIndex = 44;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(150, 72);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(123, 25);
+            this.label15.TabIndex = 43;
+            this.label15.Text = "Month Datas";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(7, 348);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(124, 25);
+            this.label18.TabIndex = 42;
+            this.label18.Text = "Const Taxes";
+            // 
+            // constTextBox
+            // 
+            this.constTextBox.Location = new System.Drawing.Point(150, 348);
+            this.constTextBox.Multiline = true;
+            this.constTextBox.Name = "constTextBox";
+            this.constTextBox.Size = new System.Drawing.Size(144, 29);
+            this.constTextBox.TabIndex = 41;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(7, 290);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(99, 25);
+            this.label17.TabIndex = 40;
+            this.label17.Text = "Amortizat.";
+            // 
+            // amortizationTextBox
+            // 
+            this.amortizationTextBox.Location = new System.Drawing.Point(150, 290);
+            this.amortizationTextBox.Multiline = true;
+            this.amortizationTextBox.Name = "amortizationTextBox";
+            this.amortizationTextBox.Size = new System.Drawing.Size(144, 29);
+            this.amortizationTextBox.TabIndex = 39;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(7, 233);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(91, 25);
+            this.label16.TabIndex = 38;
+            this.label16.Text = "Comunal";
+            // 
+            // comunalTextBox
+            // 
+            this.comunalTextBox.Location = new System.Drawing.Point(150, 233);
+            this.comunalTextBox.Multiline = true;
+            this.comunalTextBox.Name = "comunalTextBox";
+            this.comunalTextBox.Size = new System.Drawing.Size(144, 29);
+            this.comunalTextBox.TabIndex = 37;
+            // 
+            // Salary
+            // 
+            this.Salary.AutoSize = true;
+            this.Salary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Salary.Location = new System.Drawing.Point(7, 177);
+            this.Salary.Name = "Salary";
+            this.Salary.Size = new System.Drawing.Size(68, 25);
+            this.Salary.TabIndex = 36;
+            this.Salary.Text = "Salary";
+            // 
+            // salaryTextBox
+            // 
+            this.salaryTextBox.Location = new System.Drawing.Point(150, 177);
+            this.salaryTextBox.Multiline = true;
+            this.salaryTextBox.Name = "salaryTextBox";
+            this.salaryTextBox.Size = new System.Drawing.Size(144, 29);
+            this.salaryTextBox.TabIndex = 35;
+            // 
+            // Rent
+            // 
+            this.Rent.AutoSize = true;
+            this.Rent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Rent.Location = new System.Drawing.Point(7, 124);
+            this.Rent.Name = "Rent";
+            this.Rent.Size = new System.Drawing.Size(52, 25);
+            this.Rent.TabIndex = 34;
+            this.Rent.Text = "Rent";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(447, 23);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(231, 32);
+            this.label14.TabIndex = 33;
+            this.label14.Text = "Price Calculator";
+            // 
+            // rentTextBox
+            // 
+            this.rentTextBox.Location = new System.Drawing.Point(150, 124);
+            this.rentTextBox.Multiline = true;
+            this.rentTextBox.Name = "rentTextBox";
+            this.rentTextBox.Size = new System.Drawing.Size(144, 29);
+            this.rentTextBox.TabIndex = 31;
             // 
             // writeOutBindingSource
             // 
@@ -1006,6 +1459,8 @@
             this.writingOutTabPage.ResumeLayout(false);
             this.writingOutTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.priceCalculator.ResumeLayout(false);
+            this.priceCalculator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.writeOutBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
@@ -1091,5 +1546,44 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.Button updateButtonWritingOut;
+        private System.Windows.Forms.TabPage priceCalculator;
+        private System.Windows.Forms.TextBox rentTextBox;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox constTextBox;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox amortizationTextBox;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox comunalTextBox;
+        private System.Windows.Forms.Label Salary;
+        private System.Windows.Forms.TextBox salaryTextBox;
+        private System.Windows.Forms.Label Rent;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox costPriceProductTextBox;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox incomeTaxTextBox;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox profitTextBox;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox minCountOfSalesTextBox;
+        private System.Windows.Forms.Label saleProductCount;
+        private System.Windows.Forms.TextBox saleProductCountTextBox;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox workDayTextBox;
+        private Guna.UI2.WinForms.Guna2Button calculateButton;
+        private System.Windows.Forms.Label showTotalPrice;
+        private System.Windows.Forms.Label showProfit;
+        private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.TextBox otherTextBox;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.ToolTip toolTip3;
     }
 }

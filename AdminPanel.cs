@@ -14,6 +14,7 @@ using System.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Diagnostics;
 using System.Xml.Linq;
+using System.Drawing.Text;
 
 namespace CoffeShop
 {
@@ -83,7 +84,7 @@ namespace CoffeShop
             CreateColumnsWriteOut();
             RefreashDatGrid(dataGridView1, checkData);
             RefreashDatGridFood(dataGridView2, checkDataFood);
-            RefreashDatGridWriteOut(dataGridView3,checkDataWriteOut);
+            RefreashDatGridWriteOut(dataGridView3, checkDataWriteOut);
             UnVisibleFirstRow(dataGridView1);
             DayProfit();//day profit tablum tvyalneri avelacum hetaga live charti hamar
             LiveChartsConnectWithBase();
@@ -91,7 +92,8 @@ namespace CoffeShop
             dataGridView3.Columns[0].Visible = false;
             sellingLabel.Text = " ";
             buyingLabel.Text = " ";
-            profitLabel.Text = " "; }
+            profitLabel.Text = " ";
+        }
         public AdminPanel()
         {
             InitializeComponent();
@@ -157,7 +159,7 @@ namespace CoffeShop
                 }
                 else
                 {
-                    MessageBox.Show("Please Input valid dates", "Invalid Format", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please Input valid datas", "Invalid Format", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -332,6 +334,115 @@ namespace CoffeShop
             refreshButtonFoodPanel.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\refresh.png");
             searchButtonFood.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\search.png");
             searchButton.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\search.png");
+            clearButton.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\clear.png");
+            ClearCalculator();
         }
-    }  
-}  
+
+        private bool CheckElementsNotString(
+           string rent,
+           string salary,
+           string comunal,
+           string amortization,
+           string constTax,
+           string profitPercent,
+           string incomeTax,
+           string saleProductCount,
+           string minCountOfSales,
+           string workDays,
+           string productCost, 
+           string other)
+        {
+            decimal prent;
+            decimal psalary;
+            decimal pcomunal;
+            decimal pamortization;
+            decimal pconstTax;
+            double pprofitPercent;
+            double pincomeTax;
+            int psaleProductCount;
+            int pminCountOfSales;
+            int pworkDays;
+            decimal pother;
+            decimal pproductCost;
+            if (decimal.TryParse(rent, out prent) &&
+                decimal.TryParse(salary, out psalary) &&
+                decimal.TryParse(comunal, out pcomunal) &&
+                decimal.TryParse(amortization, out pamortization) &&
+                decimal.TryParse(constTax, out pconstTax) &&
+                double.TryParse(profitPercent, out pprofitPercent) &&
+                double.TryParse(incomeTax, out pincomeTax) &&
+                int.TryParse(saleProductCount, out psaleProductCount) &&
+                int.TryParse(minCountOfSales, out pminCountOfSales) &&
+                int.TryParse(workDays, out pworkDays) &&
+                decimal.TryParse(productCost, out pproductCost )&&
+                decimal.TryParse(other, out pother) &&
+                Convert.ToInt32(saleProductCount) >0 && 
+                Convert.ToInt32(minCountOfSales)>0 &&
+                Convert.ToInt32(workDays)>0)
+
+
+            {
+                return true;
+            }
+            else { return false; }
+
+        }
+
+        
+
+        private void calculateButton_Click(object sender, EventArgs e)
+        {
+          if(  CheckElementsNotString(
+                rentTextBox.Text,salaryTextBox.Text,comunalTextBox.Text,
+                amortizationTextBox.Text,constTextBox.Text,profitTextBox.Text,
+                incomeTaxTextBox.Text,saleProductCountTextBox.Text,minCountOfSalesTextBox.Text,
+                workDayTextBox.Text,costPriceProductTextBox.Text, otherTextBox.Text))
+            {
+                PriceCalculator calculator = new PriceCalculator(decimal.Parse(rentTextBox.Text), decimal.Parse(salaryTextBox.Text), decimal.Parse(comunalTextBox.Text),
+                decimal.Parse(amortizationTextBox.Text), decimal.Parse(constTextBox.Text), decimal.Parse(otherTextBox.Text), double.Parse(profitTextBox.Text),
+                double.Parse(incomeTaxTextBox.Text), int.Parse(saleProductCountTextBox.Text), int.Parse(minCountOfSalesTextBox.Text),
+                int.Parse(workDayTextBox.Text), decimal.Parse(costPriceProductTextBox.Text));
+
+                double totalPrice = Math.Round( (double)calculator.CalculateTotalPrice());
+
+                showTotalPrice.Text = $"Total Price  ={totalPrice}";
+                showProfit.Text = $"Profit = {Math.Round((calculator.GetProfit()))}";
+
+                calculator.SendCommandToBase();
+            }
+            else
+            {
+                MessageBox.Show("Please Input valid datas", "Invalid Format", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void ClearCalculator()
+        {
+            rentTextBox.Text = "0";
+            salaryTextBox.Text = "0";
+            comunalTextBox.Text = "0";
+            amortizationTextBox.Text = "0";
+            constTextBox.Text = "0";
+            profitTextBox.Text = "0";
+            incomeTaxTextBox.Text = "0";
+            saleProductCountTextBox.Text = "0";
+            minCountOfSalesTextBox.Text = "0";
+            workDayTextBox.Text = "0";
+            costPriceProductTextBox.Text = "0";
+            otherTextBox.Text = "0";
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            ClearCalculator();
+        }
+
+        private void clearButton_MouseHover(object sender, EventArgs e)
+        {
+            toolTip2.Show("Clear text boxes", clearButton);
+        }
+
+        
+        
+        
+    }
+}

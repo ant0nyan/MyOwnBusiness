@@ -103,6 +103,7 @@
     <Compile Include="Employer.Designer.cs">
       <DependentUpon>Employer.cs</DependentUpon>
     </Compile>
+    <Compile Include="PriceCalculator.cs" />
     <Compile Include="ProductPanel.cs">
       <SubType>Form</SubType>
     </Compile>
