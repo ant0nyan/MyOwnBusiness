@@ -15,6 +15,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Diagnostics;
 using System.Xml.Linq;
 using System.Drawing.Text;
+using System.Windows.Markup;
 
 namespace CoffeShop
 {
@@ -335,6 +336,7 @@ namespace CoffeShop
             searchButtonFood.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\search.png");
             searchButton.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\search.png");
             clearButton.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\clear.png");
+            rocketButton.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\rocket.png");
             ClearCalculator();
         }
 
@@ -406,8 +408,8 @@ namespace CoffeShop
                 double totalPrice = Math.Round( (double)calculator.CalculateTotalPrice());
 
                 showTotalPrice.Text = $"Total Price  ={totalPrice}";
-                showProfit.Text = $"Profit = {Math.Round((calculator.GetProfit()))}";
-
+                showProfit.Text = $"Profit      =     {Math.Round((calculator.GetProfit()))}";
+                expenseLabel.Text =$"Expense   =    {totalPrice - (double)Math.Round((calculator.GetProfit()))}";
                 calculator.SendCommandToBase();
             }
             else
@@ -441,8 +443,44 @@ namespace CoffeShop
             toolTip2.Show("Clear text boxes", clearButton);
         }
 
-        
-        
-        
+        private void rocketButton_Click(object sender, EventArgs e)
+        {
+
+            ConstDatasCalculator();
+        }
+
+        private void ConstDatasCalculator()
+        {
+            List<string> datas = new List<string>();
+
+
+            string command = $"SELECT * FROM CalculatorMonthDatas WHERE Id=1";
+            int num = 0;
+
+            SqlDataReader read = dataBase.GetDataReader(command);
+            while (read.Read())
+            {
+                for (int i = 0; i < 9; i++)
+                {
+                    datas.Add(read[num].ToString());
+                    num++;
+
+                }
+            }
+            dataBase.CloseConnecttion();
+            rentTextBox.Text = datas[1];
+            salaryTextBox.Text = datas[2];
+            comunalTextBox.Text = datas[3];
+            amortizationTextBox.Text = datas[4];
+            constTextBox.Text = datas[5];
+            saleProductCountTextBox.Text = datas[6];
+            workDayTextBox.Text = datas[7];
+            otherTextBox.Text = datas[8];
+        }
+
+        private void rocketButton_MouseHover(object sender, EventArgs e)
+        {
+            toolTip2.Show("Add last main datas", rocketButton);
+        }
     }
 }

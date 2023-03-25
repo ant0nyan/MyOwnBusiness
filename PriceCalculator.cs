@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,7 @@ namespace CoffeShop
         private decimal totalPrice;
         decimal totalPriceIncludeRSCAC;
         decimal totalPricePlusProfit;
+        DatabaseClass data = new DatabaseClass();
 
         public PriceCalculator(
             decimal rent,
@@ -114,7 +116,7 @@ namespace CoffeShop
 
         private void ChangeDatasToBase()
         {
-            DatabaseClass data = new DatabaseClass();
+           
             string command = $"UPDATE CalculatorMonthDatas SET Rent = '{rent}',Salary = '{salary}',Comunal = '{comunal}',Amortizat = '{amortization}',ConstTax = '{constTax}',Other = '{other}',ProductCount = '{saleProductCount}',WorkDays = '{workDays}'";
             data.SendCommand(command);
 
@@ -124,6 +126,7 @@ namespace CoffeShop
         {
             ChangeDatasToBase();
         }
+       
 
     }
 }

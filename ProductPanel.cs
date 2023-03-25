@@ -17,8 +17,10 @@ namespace CoffeShop
         bool hasFlag = false;
         bool hasFlagProfit = false;
         bool hasFlagCount = false;
+        bool hasFlagFew = false;
         public static  DateTime time = new DateTime();
         public List<string> colorMCFN = new List<string>();
+        int fewProducts = 0;
         private void foodAddButton_Click(object sender, EventArgs e)
         {
             string productType = foodTypeTextBox.Text;
@@ -315,12 +317,22 @@ namespace CoffeShop
                 {
                     if (row.Cells[2].Value.ToString() == colorMCFN[i])
                     {
+                        fewProducts++;
+                        
                         row.DefaultCellStyle.BackColor = Color.Red;
                         row.DefaultCellStyle.ForeColor = Color.White;
                     }
                 }
             }
+            ShowFewProduct();
             colorMCFN.Clear();
+            fewProducts = 0;
+        }
+
+        private void ShowFewProduct()
+        {
+            fewProductLabel.Visible = true;
+            fewProductLabel.Text = $"Few products - {fewProducts}";
         }
     }
 }
