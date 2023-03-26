@@ -86,6 +86,12 @@
     <Compile Include="Analayse.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CalculateCostPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalculateCostPrice.Designer.cs">
+      <DependentUpon>CalculateCostPrice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database1DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -131,6 +137,9 @@
     <Compile Include="WriteOut.cs">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="CalculateCostPrice.resx">
+      <DependentUpon>CalculateCostPrice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employer.resx">
       <DependentUpon>Employer.cs</DependentUpon>
     </EmbeddedResource>

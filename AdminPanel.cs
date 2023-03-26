@@ -407,9 +407,9 @@ namespace CoffeShop
 
                 double totalPrice = Math.Round( (double)calculator.CalculateTotalPrice());
 
-                showTotalPrice.Text = $"Total Price  ={totalPrice}";
-                showProfit.Text = $"Profit      =     {Math.Round((calculator.GetProfit()))}";
-                expenseLabel.Text =$"Expense   =    {totalPrice - (double)Math.Round((calculator.GetProfit()))}";
+                showTotalPrice.Text = $"Total Price = {totalPrice}";
+                showProfit.Text = $"Profit        =     {Math.Round((calculator.GetProfit()))}";
+                expenseLabel.Text =$"Expense    =    {totalPrice - (double)Math.Round((calculator.GetProfit()))}";
                 calculator.SendCommandToBase();
             }
             else
@@ -481,6 +481,25 @@ namespace CoffeShop
         private void rocketButton_MouseHover(object sender, EventArgs e)
         {
             toolTip2.Show("Add last main datas", rocketButton);
+        }
+
+        private void warningPanel_MouseHover(object sender, EventArgs e)
+        {
+            toolTip2.Show("There are few products in the list", warningPanel);
+        }
+
+        
+
+        private void PriceButton_MouseHover(object sender, EventArgs e)
+        {
+            toolTip2.Show("Calculate the cost price of the product",PriceButton);
+        }
+
+        private void PriceButton_Click(object sender, EventArgs e)
+        {
+            CalculateCostPrice product = new CalculateCostPrice();
+            product.Show();
+
         }
     }
 }

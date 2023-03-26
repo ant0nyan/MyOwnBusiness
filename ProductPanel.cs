@@ -319,20 +319,36 @@ namespace CoffeShop
                     {
                         fewProducts++;
                         
-                        row.DefaultCellStyle.BackColor = Color.Red;
+                        row.DefaultCellStyle.BackColor = Color.FromArgb(255, 128, 128);
                         row.DefaultCellStyle.ForeColor = Color.White;
                     }
                 }
             }
-            ShowFewProduct();
+            if (fewProducts != 0)
+            {
+                ShowFewProduct();
+            }
+            else
+            {
+                HideFewProduct();
+            }
             colorMCFN.Clear();
-            fewProducts = 0;
+           
         }
 
         private void ShowFewProduct()
         {
             fewProductLabel.Visible = true;
-            fewProductLabel.Text = $"Few products - {fewProducts}";
+            warningPanel.Visible = true;
+            fewProductLabel.Text = $"-{fewProducts}";
+            fewProductLabel.BackColor = Color.Transparent;
+            fewProducts = 0;
+        }
+        private void HideFewProduct()
+        {
+            fewProductLabel.Visible = false;
+            warningPanel.Visible = false;
+            
         }
     }
 }

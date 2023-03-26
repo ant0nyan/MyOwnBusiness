@@ -15,6 +15,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPanel));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.foodTabPage = new System.Windows.Forms.TabPage();
+            this.warningPanel = new System.Windows.Forms.Panel();
+            this.fewProductLabel = new System.Windows.Forms.Label();
             this.mcfnTextBox = new System.Windows.Forms.TextBox();
             this.mcfnLabel = new System.Windows.Forms.Label();
             this.gramButton = new Guna.UI2.WinForms.Guna2Button();
@@ -79,10 +81,12 @@
             this.productListBox = new System.Windows.Forms.ListBox();
             this.writingOut = new Guna.UI2.WinForms.Guna2Button();
             this.priceCalculator = new System.Windows.Forms.TabPage();
+            this.PriceButton = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.expenseLabel = new System.Windows.Forms.Label();
             this.showTotalPrice = new System.Windows.Forms.Label();
             this.showProfit = new System.Windows.Forms.Label();
+            this.calculateButton = new Guna.UI2.WinForms.Guna2Button();
             this.rocketButton = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -92,7 +96,6 @@
             this.label77 = new System.Windows.Forms.Label();
             this.otherTextBox = new System.Windows.Forms.TextBox();
             this.clearButton = new System.Windows.Forms.Button();
-            this.calculateButton = new Guna.UI2.WinForms.Guna2Button();
             this.label24 = new System.Windows.Forms.Label();
             this.workDayTextBox = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -128,7 +131,7 @@
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
-            this.fewProductLabel = new System.Windows.Forms.Label();
+            this.toolTip5 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1.SuspendLayout();
             this.foodTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -164,6 +167,7 @@
             // foodTabPage
             // 
             this.foodTabPage.BackColor = System.Drawing.Color.White;
+            this.foodTabPage.Controls.Add(this.warningPanel);
             this.foodTabPage.Controls.Add(this.fewProductLabel);
             this.foodTabPage.Controls.Add(this.mcfnTextBox);
             this.foodTabPage.Controls.Add(this.mcfnLabel);
@@ -192,6 +196,29 @@
             this.foodTabPage.Size = new System.Drawing.Size(1278, 646);
             this.foodTabPage.TabIndex = 0;
             this.foodTabPage.Text = "Product";
+            // 
+            // warningPanel
+            // 
+            this.warningPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("warningPanel.BackgroundImage")));
+            this.warningPanel.Location = new System.Drawing.Point(458, 42);
+            this.warningPanel.Name = "warningPanel";
+            this.warningPanel.Size = new System.Drawing.Size(33, 32);
+            this.warningPanel.TabIndex = 36;
+            this.warningPanel.Visible = false;
+            this.warningPanel.MouseHover += new System.EventHandler(this.warningPanel_MouseHover);
+            // 
+            // fewProductLabel
+            // 
+            this.fewProductLabel.AutoSize = true;
+            this.fewProductLabel.BackColor = System.Drawing.Color.White;
+            this.fewProductLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fewProductLabel.ForeColor = System.Drawing.Color.Red;
+            this.fewProductLabel.Location = new System.Drawing.Point(497, 42);
+            this.fewProductLabel.Name = "fewProductLabel";
+            this.fewProductLabel.Size = new System.Drawing.Size(26, 29);
+            this.fewProductLabel.TabIndex = 35;
+            this.fewProductLabel.Text = "1";
+            this.fewProductLabel.Visible = false;
             // 
             // mcfnTextBox
             // 
@@ -360,6 +387,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.SlateBlue;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(458, 80);
             this.dataGridView2.Name = "dataGridView2";
@@ -608,6 +636,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.SlateBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(636, 103);
             this.dataGridView1.Name = "dataGridView1";
@@ -958,6 +987,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView3.BackgroundColor = System.Drawing.Color.SlateBlue;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(417, 32);
             this.dataGridView3.Name = "dataGridView3";
@@ -1005,6 +1035,7 @@
             // 
             // priceCalculator
             // 
+            this.priceCalculator.Controls.Add(this.PriceButton);
             this.priceCalculator.Controls.Add(this.panel1);
             this.priceCalculator.Controls.Add(this.rocketButton);
             this.priceCalculator.Controls.Add(this.label30);
@@ -1047,11 +1078,30 @@
             this.priceCalculator.Text = "Price Calculator";
             this.priceCalculator.UseVisualStyleBackColor = true;
             // 
+            // PriceButton
+            // 
+            this.PriceButton.Animated = true;
+            this.PriceButton.BorderRadius = 12;
+            this.PriceButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.PriceButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.PriceButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.PriceButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.PriceButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.PriceButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PriceButton.ForeColor = System.Drawing.Color.White;
+            this.PriceButton.Location = new System.Drawing.Point(720, 215);
+            this.PriceButton.Name = "PriceButton";
+            this.PriceButton.Size = new System.Drawing.Size(129, 36);
+            this.PriceButton.TabIndex = 71;
+            this.PriceButton.Text = "Count";
+            this.PriceButton.Click += new System.EventHandler(this.PriceButton_Click);
+            this.PriceButton.MouseHover += new System.EventHandler(this.PriceButton_MouseHover);
+            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.panel1.Controls.Add(this.expenseLabel);
             this.panel1.Controls.Add(this.showTotalPrice);
             this.panel1.Controls.Add(this.showProfit);
@@ -1066,7 +1116,7 @@
             // 
             this.expenseLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.expenseLabel.AutoSize = true;
-            this.expenseLabel.BackColor = System.Drawing.Color.Chartreuse;
+            this.expenseLabel.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.expenseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.expenseLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.expenseLabel.Location = new System.Drawing.Point(92, 97);
@@ -1078,7 +1128,7 @@
             // 
             this.showTotalPrice.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.showTotalPrice.AutoSize = true;
-            this.showTotalPrice.BackColor = System.Drawing.Color.Chartreuse;
+            this.showTotalPrice.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.showTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showTotalPrice.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.showTotalPrice.Location = new System.Drawing.Point(92, 24);
@@ -1090,7 +1140,7 @@
             // 
             this.showProfit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.showProfit.AutoSize = true;
-            this.showProfit.BackColor = System.Drawing.Color.Chartreuse;
+            this.showProfit.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.showProfit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showProfit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.showProfit.Location = new System.Drawing.Point(92, 167);
@@ -1098,10 +1148,29 @@
             this.showProfit.Size = new System.Drawing.Size(0, 25);
             this.showProfit.TabIndex = 59;
             // 
+            // calculateButton
+            // 
+            this.calculateButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.calculateButton.Animated = true;
+            this.calculateButton.BorderRadius = 13;
+            this.calculateButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.calculateButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.calculateButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.calculateButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.calculateButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.calculateButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calculateButton.ForeColor = System.Drawing.Color.White;
+            this.calculateButton.Location = new System.Drawing.Point(50, 213);
+            this.calculateButton.Name = "calculateButton";
+            this.calculateButton.Size = new System.Drawing.Size(269, 40);
+            this.calculateButton.TabIndex = 57;
+            this.calculateButton.Text = "Calculate";
+            this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
+            // 
             // rocketButton
             // 
             this.rocketButton.BackColor = System.Drawing.Color.Transparent;
-            this.rocketButton.Location = new System.Drawing.Point(156, 70);
+            this.rocketButton.Location = new System.Drawing.Point(111, 71);
             this.rocketButton.Name = "rocketButton";
             this.rocketButton.Size = new System.Drawing.Size(40, 30);
             this.rocketButton.TabIndex = 69;
@@ -1168,7 +1237,7 @@
             // 
             this.label77.AutoSize = true;
             this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label77.Location = new System.Drawing.Point(97, 400);
+            this.label77.Location = new System.Drawing.Point(52, 400);
             this.label77.Name = "label77";
             this.label77.Size = new System.Drawing.Size(61, 25);
             this.label77.TabIndex = 62;
@@ -1185,7 +1254,7 @@
             // clearButton
             // 
             this.clearButton.BackColor = System.Drawing.Color.Transparent;
-            this.clearButton.Location = new System.Drawing.Point(102, 69);
+            this.clearButton.Location = new System.Drawing.Point(57, 70);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(40, 30);
             this.clearButton.TabIndex = 60;
@@ -1193,30 +1262,11 @@
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             this.clearButton.MouseHover += new System.EventHandler(this.clearButton_MouseHover);
             // 
-            // calculateButton
-            // 
-            this.calculateButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.calculateButton.Animated = true;
-            this.calculateButton.BorderRadius = 13;
-            this.calculateButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.calculateButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.calculateButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.calculateButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.calculateButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.calculateButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calculateButton.ForeColor = System.Drawing.Color.White;
-            this.calculateButton.Location = new System.Drawing.Point(50, 213);
-            this.calculateButton.Name = "calculateButton";
-            this.calculateButton.Size = new System.Drawing.Size(269, 40);
-            this.calculateButton.TabIndex = 57;
-            this.calculateButton.Text = "Calculate";
-            this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
-            // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(97, 498);
+            this.label24.Location = new System.Drawing.Point(52, 498);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(109, 25);
             this.label24.TabIndex = 56;
@@ -1244,7 +1294,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(461, 184);
+            this.label19.Location = new System.Drawing.Point(425, 184);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(217, 25);
             this.label19.TabIndex = 53;
@@ -1262,7 +1312,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(941, 184);
+            this.label20.Location = new System.Drawing.Point(920, 184);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(138, 25);
             this.label20.TabIndex = 51;
@@ -1280,7 +1330,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(941, 126);
+            this.label21.Location = new System.Drawing.Point(920, 126);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(79, 25);
             this.label21.TabIndex = 49;
@@ -1298,7 +1348,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(461, 131);
+            this.label22.Location = new System.Drawing.Point(425, 131);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(183, 25);
             this.label22.TabIndex = 47;
@@ -1316,7 +1366,7 @@
             // 
             this.saleProductCount.AutoSize = true;
             this.saleProductCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saleProductCount.Location = new System.Drawing.Point(97, 451);
+            this.saleProductCount.Location = new System.Drawing.Point(52, 451);
             this.saleProductCount.Name = "saleProductCount";
             this.saleProductCount.Size = new System.Drawing.Size(137, 25);
             this.saleProductCount.TabIndex = 45;
@@ -1344,7 +1394,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(97, 351);
+            this.label18.Location = new System.Drawing.Point(52, 351);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(124, 25);
             this.label18.TabIndex = 42;
@@ -1362,7 +1412,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(97, 293);
+            this.label17.Location = new System.Drawing.Point(52, 293);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(99, 25);
             this.label17.TabIndex = 40;
@@ -1380,7 +1430,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(97, 236);
+            this.label16.Location = new System.Drawing.Point(52, 236);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(91, 25);
             this.label16.TabIndex = 38;
@@ -1398,7 +1448,7 @@
             // 
             this.Salary.AutoSize = true;
             this.Salary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Salary.Location = new System.Drawing.Point(97, 180);
+            this.Salary.Location = new System.Drawing.Point(52, 180);
             this.Salary.Name = "Salary";
             this.Salary.Size = new System.Drawing.Size(68, 25);
             this.Salary.TabIndex = 36;
@@ -1416,7 +1466,7 @@
             // 
             this.Rent.AutoSize = true;
             this.Rent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rent.Location = new System.Drawing.Point(97, 127);
+            this.Rent.Location = new System.Drawing.Point(52, 127);
             this.Rent.Name = "Rent";
             this.Rent.Size = new System.Drawing.Size(52, 25);
             this.Rent.TabIndex = 34;
@@ -1468,17 +1518,6 @@
             // writeOutTableAdapter
             // 
             this.writeOutTableAdapter.ClearBeforeFill = true;
-            // 
-            // fewProductLabel
-            // 
-            this.fewProductLabel.AutoSize = true;
-            this.fewProductLabel.BackColor = System.Drawing.Color.Red;
-            this.fewProductLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.fewProductLabel.Location = new System.Drawing.Point(458, 41);
-            this.fewProductLabel.Name = "fewProductLabel";
-            this.fewProductLabel.Size = new System.Drawing.Size(0, 25);
-            this.fewProductLabel.TabIndex = 35;
-            this.fewProductLabel.Visible = false;
             // 
             // AdminPanel
             // 
@@ -1639,5 +1678,8 @@
         private System.Windows.Forms.Label expenseLabel;
         private System.Windows.Forms.ToolTip toolTip4;
         private System.Windows.Forms.Label fewProductLabel;
+        private System.Windows.Forms.Panel warningPanel;
+        private System.Windows.Forms.ToolTip toolTip5;
+        private Guna.UI2.WinForms.Guna2Button PriceButton;
     }
 }
