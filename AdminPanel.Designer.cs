@@ -251,9 +251,9 @@
             this.gramButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.gramButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gramButton.ForeColor = System.Drawing.Color.White;
-            this.gramButton.Location = new System.Drawing.Point(323, 229);
+            this.gramButton.Location = new System.Drawing.Point(336, 229);
             this.gramButton.Name = "gramButton";
-            this.gramButton.Size = new System.Drawing.Size(81, 29);
+            this.gramButton.Size = new System.Drawing.Size(96, 29);
             this.gramButton.TabIndex = 32;
             this.gramButton.Text = "Gram";
             this.gramButton.Click += new System.EventHandler(this.gramButton_Click);
@@ -270,7 +270,7 @@
             this.pieceButton.ForeColor = System.Drawing.Color.White;
             this.pieceButton.Location = new System.Drawing.Point(234, 229);
             this.pieceButton.Name = "pieceButton";
-            this.pieceButton.Size = new System.Drawing.Size(83, 29);
+            this.pieceButton.Size = new System.Drawing.Size(96, 29);
             this.pieceButton.TabIndex = 31;
             this.pieceButton.Text = "Piece";
             this.pieceButton.Click += new System.EventHandler(this.pieceButton_Click);

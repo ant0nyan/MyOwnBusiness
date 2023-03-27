@@ -18,8 +18,6 @@ namespace CoffeShop
             dataGridView3.Columns.Add("Name", " Ապրանքի անունը");
             dataGridView3.Columns.Add("Count", "Քանակ");
             dataGridView3.Columns.Add("Date", "Ամսաթիվ");
-
-
         }
         private void ReadSingleRowsWriteOut(DataGridView dgw, IDataRecord record) // toxery avelacnelu procesy
         {
@@ -28,7 +26,6 @@ namespace CoffeShop
         private void RefreashDatGridWriteOut(DataGridView dgw, string checkData) // hramany katarelu u toxery lracnelu process
         {
             dgw.Rows.Clear();
-
 
             SqlCommand command = new SqlCommand(checkData, dataBase.getConnection());
 
@@ -49,13 +46,10 @@ namespace CoffeShop
             while (dataReader.Read())
             {
                 productListBox.Items.Add(dataReader[2].ToString());
-
             }
-
             dataReader.Close();
 
         }
-
         private void CountWritingOutBase(string nameProduct, int count)
         {
             string updateCommand = $"Update ProductIngridients Set Count = Count - '{count}' Where Name = N'{nameProduct}'";
@@ -66,12 +60,10 @@ namespace CoffeShop
 
 
         }
-
         private void writingOut_Click(object sender, EventArgs e)
         {
             CountWriteOut();
         }
-
         private void CountWriteOut()
         {
             string prodName = productListBox.GetItemText(productListBox.SelectedItem);
@@ -89,7 +81,6 @@ namespace CoffeShop
 
             }
         }
-
         private void FindByDate()
         {
             dataGridView3.Rows.Clear();
@@ -110,6 +101,5 @@ namespace CoffeShop
         {
             FindByDate();
         }
-
     }
 }

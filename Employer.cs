@@ -27,7 +27,6 @@ namespace CoffeShop
         {
             InitializeComponent();
         }
-
         private void Employe_Load(object sender, EventArgs e)
         {
             refreshButtonEmployerPanel.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\refresh.png");
@@ -67,8 +66,6 @@ namespace CoffeShop
                 IngridForSale.typeList.Add(dataReader.GetString(1));
                 IngridForSale.nameList.Add(dataReader.GetString(2));
                 IngridForSale.priceList.Add(dataReader.GetInt32(3));
-
-
             }
             dataReader.Close();
             employerDataGridView.CurrentCell = null;
@@ -89,15 +86,12 @@ namespace CoffeShop
                 ReadSingleRows(dgw, read);
             }
             read.Close();
-
         }
         private void employerDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)//toxery yntrelu pahy
         {
-
             id = e.RowIndex;
             FirstInformationCreate();
         }
-
         private void addButtonEmployer_Click(object sender, EventArgs e)
         {
             ClearLabels();
@@ -105,7 +99,6 @@ namespace CoffeShop
             if (id == -1 || productCount == 0)
             {
                 MessageBox.Show("Error please Select product and Input count", "Invalid Format", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
             else
             {
@@ -115,26 +108,21 @@ namespace CoffeShop
             }
             
         }
-
         private void addProductInformation()
         {
-            FirstInformationCreateWithRowIndex();
-
-            
-           int count = productCount;
-           int price = Convert.ToInt32(firstPriceLabel.Text);
+            FirstInformationCreateWithRowIndex();      
+            int count = productCount;
+            int price = Convert.ToInt32(firstPriceLabel.Text);
 
             AllInformationCreate();
 
             showTotal.Text = ShowTotalPrice(price, count).ToString();//yndhanur gumary
         }
-
         private int ShowTotalPrice(int price, int count)
         {
             priceList.Add(price * count);
             totalPrice += price * count;
             return totalPrice;
-
         }
         public void ClearLabels()
         {
@@ -144,7 +132,6 @@ namespace CoffeShop
             employerCountLabel.Text = "";
 
         }
-
         private void FirstInformationCreate ()//arajnayin informaciayi stexcumy
         {
             DataGridViewRow row = employerDataGridView.Rows[id];
@@ -159,7 +146,6 @@ namespace CoffeShop
 
             rowIndex.Add(Convert.ToInt32(row.Cells[0].Value));
         }
-
         private void AllInformationCreate() // cheki masy
         {                   
                 IngridForSale.countList.Add(productCount);
@@ -187,7 +173,7 @@ namespace CoffeShop
                 }
             }
         }//1 toxy unvisiblya sarqum
-        private void SendIdAndCountToBase(List<int> id ,List<int> count,List<DateTime> dates,List<int> price)//vajarvac apranqneri tvyalnery uxarkuma baza
+        private void SendIdAndCountToBase(List<int> id ,List<int> count,List<DateTime> dates,List<int> price)//find sold product dates and send to database
         {   
             string command;
             for (int i = 0; i < id.Count; i++)
@@ -230,8 +216,7 @@ namespace CoffeShop
             
            
         }
-
-        private void FindMinusCount(List<int> countProduct,List<int> countIngrid)// hanvox ingrid qanakna gtnum qcum listi mej
+        private void FindMinusCount(List<int> countProduct,List<int> countIngrid)// the amount to be removed is added to the listՉ(hanvox ingrid qanakna gtnum qcum listi mej)
         {
             for (int i = 0; i < countProduct.Count; i++)
             {
@@ -242,7 +227,7 @@ namespace CoffeShop
 
             }
         }
-        private void DeleteVandakanishFromDate(string id,List<int> list) // VANDAKANISHNERY JNJUMA TVERA SARQUM ARANDZIN U QCUM LISTI MEJ
+        private void DeleteVandakanishFromDate(string id,List<int> list) // Delete # symbole finde numbers and adding to list
         {
            
             string number = string.Empty;
@@ -266,8 +251,7 @@ namespace CoffeShop
                 }
             }
         }
-
-        private void MinusIngridInBase() // bazayi mejic hanuma ingridneri qanaky
+        private void MinusIngridInBase() // Minuse Ingrid Count from base
         {
             for (int i = 0; i < IngridForSale.idListToSendBase.Count; i++)
             {
@@ -278,7 +262,6 @@ namespace CoffeShop
                 dataBase.SendCommand(command);
             }
         }
-
         private void ClearAllInformation()
         {
             IngridForSale.countList.Clear();
@@ -296,18 +279,15 @@ namespace CoffeShop
             firstNameLabel.Text = $" ";
             firstPriceLabel.Text = $" ";
            
-        }//0 acnuma sax
-
+        }//Delete all information
         private void Employe_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
-
         private void resetButton_Click(object sender, EventArgs e)
         {
             ClearAllInformation();
         }
-
         private void serachTextBoxEmployer_TextChanged(object sender, EventArgs e)
         {
             Search(employerDataGridView);

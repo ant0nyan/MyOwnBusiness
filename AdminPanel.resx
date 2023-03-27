@@ -120,23 +120,20 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="warningPanel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHhSURBVEhLpZZBK0RRFMdfPoMmWUiSfAYrC0k+gCRZSdIk
-        yVr5ALKQDyBJksUsZWk9a0mSpGmSNEmSwu8/zn1z35t738zk1K/zv+f+7zl33quZSYriJ0kGYPE7SQ7J
-        VfIjWVThCJZg0OzdBQdEiWa75Br8dKAOe1CCzoFpCu4YkDbxdQw8d+RpaxMODHocH2romvaoP2DR2rWC
-        opg2Q/NQgDJM0khIhzxCPWagFRzQy7y3WwRhb8LsusyEvM6f1+QHaL18FvtFB0ynA1inA2LgP3DmIRbP
-        ataBzIDAfgY86jmk2y/7Gw67ha/bBgQ8eb2iAWeu6DYiuqdHJDhzrgHXatQFPT0ige9GA17yG8Ju4Oue
-        HxH5VQNeXdHbCOl0gHTEk9HQkPnGFp3IDMjtxbiVueIK3uQQs6AvtH580hl/RFc0oKyCwxn+q229rgGj
-        0HwPRXDgE67Q4tPfC4FXPUc1QOgHxU2NsQN9At+2ar4/r0E9/wIxTKHmTGbIaBg3u/xjbi/i14/QiNmp
-        AMU5ctFHX4PmJ4BVq4X4gnloD4obEBvyDqdwYjq9tafVfBPiwaam191h5W60nVkgF4cMMIL5BBpqUIQ8
-        cIzWme6DA2IctuAC9HflTdDoiXwJW2h5IpEkv2vcaXAGVI8uAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAeFJREFUSEullkErRFEUx18+gyZZSJJ8BisLST6AJFlJ0iTJWvkAspAPIEmSxSxl
+        aT1rSZKkaZI0SZLC7z/OfXPfm3vfzOTUr/O/5/7vOXfeq5lJiuInSQZg8TtJDslV8iNZVOEIlmDQ7N0F
+        B0SJZrvkGvx0oA57UILOgWkK7hiQNvF1DDx35GlrEw4Mehwfauia9qg/YNHatYKimDZD81CAMkzSSEiH
+        PEI9ZqAVHNDLvLdbBGFvwuy6zIS8zp/X5AdovXwW+0UHTKcDWKcDYuA/cOYhFs9q1oHMgMB+BjzqOaTb
+        L/sbDruFr9sGBDx5vaIBZ67oNiK6p0ckOHOuAddq1AU9PSKB70YDXvIbwm7g654fEflVA15d0dsI6XSA
+        dMST0dCQ+cYWncgMyO3FuJW54gre5BCzoC+0fnzSGX9EVzSgrILDGf6rbb2uAaPQfA9FcOATrtDi098L
+        gVc9RzVA6AfFTY2xA30C37Zqvj+vQT3/AjFMoeZMZshoGDe7/GNuL+LXj9CI2akAxTly0Udfg+YngFWr
+        hfiCeWgPihsQG/IOp3BiOr21p9V8E+LBpqbX3WHlbrSdWSAXhwwwgvkEGmpQhDxwjNaZ7oMDYhy24AL0
+        d+VN0OiJfAlbaHkikSS/a9xpcAZUjy4AAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="writeOutBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1036, 17</value>
-  </metadata>
-  <metadata name="databaseDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>865, 17</value>
   </metadata>
   <metadata name="databaseDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>865, 17</value>

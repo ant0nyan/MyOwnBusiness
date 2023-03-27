@@ -28,13 +28,12 @@ namespace CoffeShop
             productType = prodType;
             this.pieceOrGram = pieceOrGram;
             productMCFN = prodMCFN;
-            id++;
-            
+            id++;  
         }
         static public void AddProduct(string prodType, string prodName, int prodCount, int prodPrice,DateTime time, byte pieceOrGram, int prodMCFN) 
         {
             productList.Add(new ProductIngridients(prodType,prodName,prodCount,prodPrice,pieceOrGram,prodMCFN));
-            ProductIngridients.SendProductToBase(productList,time);
+            SendProductToBase(productList,time);
         }
         static public void SendProductToBase(List<ProductIngridients> productsForSend,DateTime time)
         {
@@ -54,9 +53,6 @@ namespace CoffeShop
             $"'{productsForSend[id].productPrice}'," +
             $"'{dateTime}')";
             data.SendCommand(command2);
-
-
-
         }
     }
 }

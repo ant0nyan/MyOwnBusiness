@@ -18,7 +18,6 @@ namespace CoffeShop
         int profit;
         private string startDate;
         private string startDateDay =$"{DatabaseClass.DateTimeFormat(DateTime.Today)}";
-
         private string dateNow = $"{DatabaseClass.DateTimeFormat(DateTime.Now)}";
         private void todayButton_Click(object sender, EventArgs e)
         {
@@ -80,7 +79,6 @@ namespace CoffeShop
             sellingLabel.Text = total.ToString();
             profitNumOne = total;
         }
-
         private int GetProfit()
         {
              profit = profitNumOne - profitNumTwo;
@@ -106,7 +104,6 @@ namespace CoffeShop
             startDate = $"{DatabaseClass.DateTimeFormat(time)}";
             return startDate;
         }
-
         private void GetDateWithUserInputTime(string startDate,string endDate)
         {
            
@@ -137,8 +134,7 @@ namespace CoffeShop
                 dataBase.SendCommand(command);
             }
         }
-
-        private void CheckDateProfit(string data)//profiti pahy stugely vor nuynic 2hat cheta
+        private void CheckDateProfit(string data)//check profit in orfer to 2 data does not go to the database
         {
             dataBase.OpenConnecttion();
             string command = $"SELECT COUNT(Day)  FROM DayProfitTable WHERE  Day='{data}'";
@@ -155,7 +151,7 @@ namespace CoffeShop
             }
             dataBase.CloseConnecttion();
         }
-        private void LiveChartsConnectWithBase()//grafiky sarqelu pahy 
+        private void LiveChartsConnectWithBase()// Create live charts 
         {
             SqlConnection sqlconnct = dataBase.getConnection();
             dataBase.OpenConnecttion();
@@ -191,8 +187,5 @@ namespace CoffeShop
             cartesianChart1.Series = series;
 
         }
-        
-
-
     }
 }

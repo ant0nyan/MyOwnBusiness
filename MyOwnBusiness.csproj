@@ -109,6 +109,7 @@
     <Compile Include="Employer.Designer.cs">
       <DependentUpon>Employer.cs</DependentUpon>
     </Compile>
+    <Compile Include="IngridForSale.cs" />
     <Compile Include="PriceCalculator.cs" />
     <Compile Include="ProductPanel.cs">
       <SubType>Form</SubType>

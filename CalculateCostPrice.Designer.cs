@@ -56,7 +56,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(78, 9);
+            this.label1.Location = new System.Drawing.Point(64, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(271, 32);
             this.label1.TabIndex = 0;
@@ -72,9 +72,9 @@
             this.gramButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.gramButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gramButton.ForeColor = System.Drawing.Color.White;
-            this.gramButton.Location = new System.Drawing.Point(239, 237);
+            this.gramButton.Location = new System.Drawing.Point(228, 237);
             this.gramButton.Name = "gramButton";
-            this.gramButton.Size = new System.Drawing.Size(85, 28);
+            this.gramButton.Size = new System.Drawing.Size(96, 28);
             this.gramButton.TabIndex = 34;
             this.gramButton.Text = "Gram";
             this.gramButton.Click += new System.EventHandler(this.gramButton_Click);
@@ -98,7 +98,7 @@
             // 
             // requiredQuantityTextBox
             // 
-            this.requiredQuantityTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requiredQuantityTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.requiredQuantityTextBox.Location = new System.Drawing.Point(138, 110);
             this.requiredQuantityTextBox.Multiline = true;
             this.requiredQuantityTextBox.Name = "requiredQuantityTextBox";
@@ -108,7 +108,7 @@
             // 
             // priceTextBox
             // 
-            this.priceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.priceTextBox.Location = new System.Drawing.Point(138, 165);
             this.priceTextBox.Multiline = true;
             this.priceTextBox.Name = "priceTextBox";
@@ -126,7 +126,7 @@
             this.calculateButton.FillColor = System.Drawing.Color.LimeGreen;
             this.calculateButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.calculateButton.ForeColor = System.Drawing.Color.White;
-            this.calculateButton.Location = new System.Drawing.Point(149, 448);
+            this.calculateButton.Location = new System.Drawing.Point(155, 440);
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(148, 41);
             this.calculateButton.TabIndex = 37;
@@ -149,10 +149,10 @@
             this.nextButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.nextButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.nextButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.nextButton.FillColor = System.Drawing.Color.DarkViolet;
+            this.nextButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.nextButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.nextButton.ForeColor = System.Drawing.Color.White;
-            this.nextButton.Location = new System.Drawing.Point(173, 284);
+            this.nextButton.Location = new System.Drawing.Point(180, 328);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(101, 31);
             this.nextButton.TabIndex = 39;
@@ -168,7 +168,7 @@
             this.showElementsPanel.Controls.Add(this.readyButton);
             this.showElementsPanel.Controls.Add(this.editButton);
             this.showElementsPanel.Controls.Add(this.showElementsListBox);
-            this.showElementsPanel.Location = new System.Drawing.Point(1, 88);
+            this.showElementsPanel.Location = new System.Drawing.Point(12, 59);
             this.showElementsPanel.Name = "showElementsPanel";
             this.showElementsPanel.Size = new System.Drawing.Size(391, 463);
             this.showElementsPanel.TabIndex = 40;

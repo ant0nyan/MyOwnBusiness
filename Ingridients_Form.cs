@@ -39,7 +39,6 @@ namespace CoffeShop
             }
             data.CloseConnecttion();
         }
-
         private int GetIdFromListName(string textForKnow) // stuguma name het tali idin
         {
             int k = -1;
@@ -56,8 +55,7 @@ namespace CoffeShop
         {
             GetProductCountAndId();
            
-            flagAdder = true;
-           
+            flagAdder = true;        
         }  
         private void GetProductCountAndId() //avelacnuma listeri mej
         {
@@ -65,8 +63,6 @@ namespace CoffeShop
             
             int id;
             string ingridListBoxItem = ingridListBox.GetItemText(ingridListBox.SelectedItem);
-
-
             if (int.TryParse(ingridCountTextBox.Text, out prodCount) &&
                 ingridCountTextBox.Text != "0" &&
                 ingridListBox.GetItemText(ingridListBox.SelectedItem) != "")
@@ -102,15 +98,12 @@ namespace CoffeShop
             if (id==string.Empty || count == string.Empty)
             {
                 MessageBox.Show("Error please Input count and select product", "Invalid Format", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
             else
             {
                 SendProductIdAndCountToBase(id, count);
                 this.Close();
-            }
-
-           
+            }        
         }        
         public void ShowAllIngridetsToLabel(List<string> nameOfIngrid, List<int> countOfIngrid)
         {
@@ -121,12 +114,10 @@ namespace CoffeShop
                 showAllIngrid.Text += $"{nameOfIngrid[i]} - {countOfIngrid[i]} \n";
             }
         }
-
         private void editingIngridCountAndName_Click(object sender, EventArgs e)
         {
             EditingIngritDates();
         }
-
         public void EditingIngritDates()
         {
             if (IngridForSale.nameListForLabel.Count == 0)
@@ -152,7 +143,6 @@ namespace CoffeShop
                 ShowAllIngridetsToLabel(IngridForSale.nameListForLabel, IngridForSale.countListToSendBase);
             }
         }
-
         private void saveButton_Click(object sender, EventArgs e)
         {
             flagAdder = true;
@@ -160,7 +150,6 @@ namespace CoffeShop
             AllDatesToString();
             
         }
-
         private void Ingridients_Form_FormClosed(object sender, FormClosedEventArgs e)
         {
             AdminPanel frm = new AdminPanel();

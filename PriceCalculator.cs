@@ -46,7 +46,6 @@ namespace CoffeShop
             int workDays,
             decimal productCost)
         {
-
             this.rent = rent;
             this.salary = salary;
             this.comunal = comunal;
@@ -59,45 +58,32 @@ namespace CoffeShop
             this.minCountOfSales = minCountOfSales;
             this.workDays = workDays;
             this.productCost = productCost;
-
         }
-
         private void GetMonthExpense()
         {
             monthExpense = rent + salary + comunal + amortization + constTax + other;
-
         }
         private void GetDayExpense()
         {
             dayExpense = monthExpense / workDays;
-
         }
         private void GetExpenseForType()
         {
             expenseForType = dayExpense / saleProductCount;
 
         }
-
         private void GetExpenseForOneSaleProduct()
         {
             expenseForOneSaleProduct = expenseForType / minCountOfSales;
 
         }
-
-       
-
         private void GetPriceIncludeRSCAC()
         {  totalPriceIncludeRSCAC = expenseForOneSaleProduct + productCost;
-
         }
         private void GetTotalPrice()
         {
             totalPricePlusProfit = (totalPriceIncludeRSCAC * (decimal)profitPercent) / 100+ totalPriceIncludeRSCAC;
-
             totalPrice =  totalPricePlusProfit +(totalPriceIncludeRSCAC * (decimal)profitPercent * (decimal)incomeTax) / 10000;
-
-
-
         }
         public decimal CalculateTotalPrice()
         {
@@ -113,20 +99,14 @@ namespace CoffeShop
         {
             return  (totalPriceIncludeRSCAC * (decimal)profitPercent) / 100;
         }
-
         private void ChangeDatasToBase()
-        {
-           
+        {         
             string command = $"UPDATE CalculatorMonthDatas SET Rent = '{rent}',Salary = '{salary}',Comunal = '{comunal}',Amortizat = '{amortization}',ConstTax = '{constTax}',Other = '{other}',ProductCount = '{saleProductCount}',WorkDays = '{workDays}'";
-            data.SendCommand(command);
-
-            
+            data.SendCommand(command);       
         }
         public void SendCommandToBase()
         {
             ChangeDatasToBase();
         }
-       
-
     }
 }

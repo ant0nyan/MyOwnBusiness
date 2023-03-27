@@ -17,7 +17,6 @@ namespace CoffeShop
         bool hasFlag = false;
         bool hasFlagProfit = false;
         bool hasFlagCount = false;
-        bool hasFlagFew = false;
         public static  DateTime time = new DateTime();
         public List<string> colorMCFN = new List<string>();
         int fewProducts = 0;
@@ -58,7 +57,6 @@ namespace CoffeShop
         }
         private void foodDeleteButton_Click(object sender, EventArgs e)
         {
-
             if (dataGridView2.CurrentCell == null)
             {
                 MessageBox.Show("Choose the row", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -68,7 +66,6 @@ namespace CoffeShop
                 int index = dataGridView2.CurrentCell.RowIndex;
                 DeleteRows(dataGridView2, index, 0, 3);
                 CleareTextBoxesFood();
-
             }
         }
         private void CleareTextBoxesFood()///text boxer y maqrelu hamar
@@ -101,12 +98,10 @@ namespace CoffeShop
             dataGridView2.Columns[0].Visible = false;
             dataGridView2.Columns[5].Visible = false;
         }
-
         private void ReadSingleRowsFood(DataGridView dgw, IDataRecord record) // toxery avelacnelu procesy
         {
-            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetInt32(3), record.GetInt32(4),  RowState.ModifiedNew);
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetInt32(3), record.GetInt32(4), RowState.ModifiedNew);
         }
-
         private void RefreashDatGridFood(DataGridView dgw, string checkData) // hramany katarelu u toxery lracnelu process
         {
             dgw.Rows.Clear();
@@ -123,18 +118,16 @@ namespace CoffeShop
                 
                 ReadSingleRowsFood(dgw, dataReader);
             }
-           
-            dataReader.Close();
+
+            dataBase.CloseConnecttion();
             ChangeRowColorByMCFN();
         }
-
         private void refreshButtonFoodPanel_Click(object sender, EventArgs e)
         {
             string checkData = $"SELECT Id,Type,Name,Count,MCFN FROM ProductIngridients ";
             RefreashDatGridFood(dataGridView2, checkData);
             CleareTextBoxesFood();
         }
-
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selectedRowFood = e.RowIndex; // toxery buttoni mej dnelu processy
@@ -150,11 +143,10 @@ namespace CoffeShop
             }
 
         }
-
         private void SearchFood(DataGridView dgw)//searchi pahy
         {
             dgw.Rows.Clear();
-            string searchCommand = $"SELECT * FROM ProductIngridients WHERE CONCAT (Type,Name,Count) LIKE N'%" + serachTextBoxFood.Text + "%'";
+            string searchCommand = $"SELECT Id,Type,Name,Count,MCFN FROM ProductIngridients WHERE CONCAT (Type,Name,Count) LIKE N'%" + serachTextBoxFood.Text + "%'";
 
             SqlCommand command = new SqlCommand(searchCommand, dataBase.getConnection());
 
@@ -166,7 +158,7 @@ namespace CoffeShop
             {
                 ReadSingleRowsFood(dgw, read);
             }
-            read.Close();
+            dataBase.CloseConnecttion();
         }
         private void serachTextBoxFood_TextChanged(object sender, EventArgs e)
         {
@@ -271,8 +263,7 @@ namespace CoffeShop
             else if (dialogResult == DialogResult.No)
             {
                 MessageBox.Show("This product has in base!!! ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-                      
+            }                
         }
         private void pieceButton_Click(object sender, EventArgs e)
         {
@@ -281,7 +272,6 @@ namespace CoffeShop
                 gramButton.FillColor = Color.FromArgb(94, 148, 255);
                 pieceButton.FillColor = Color.FromArgb(0, 192, 0);
         }
-
         private void gramButton_Click(object sender, EventArgs e)
         {
             hasFlagCount = true;
@@ -289,7 +279,6 @@ namespace CoffeShop
             pieceOrGram = 1;
             pieceButton.FillColor = Color.FromArgb(94, 148, 255);
         }
-
         private void mcfnLabel_MouseHover(object sender, EventArgs e)
         {
             toolTip1.Show("Minimum count for Notification", mcfnLabel);
@@ -335,7 +324,6 @@ namespace CoffeShop
             colorMCFN.Clear();
            
         }
-
         private void ShowFewProduct()
         {
             fewProductLabel.Visible = true;

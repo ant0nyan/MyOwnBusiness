@@ -99,6 +99,7 @@
             this.passwordTextBox.SelectedText = "";
             this.passwordTextBox.Size = new System.Drawing.Size(163, 31);
             this.passwordTextBox.TabIndex = 7;
+            this.passwordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTextBox_KeyDown);
             // 
             // loginTextBox
             // 
@@ -149,6 +150,7 @@
         private Guna.UI2.WinForms.Guna2Button enterButton;
         private Guna.UI2.WinForms.Guna2TextBox passwordTextBox;
         private Guna.UI2.WinForms.Guna2TextBox loginTextBox;
+
     }
 }
 

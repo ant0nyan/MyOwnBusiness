@@ -26,7 +26,6 @@ namespace CoffeShop
         Modified,
         ModifiedNew,
         Deleted,
-
     }
     public partial class AdminPanel : Form
     {
@@ -52,12 +51,10 @@ namespace CoffeShop
         private void ReadSingleRows(DataGridView dgw, IDataRecord record) // toxery avelacnelu procesy
         {
             dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetInt32(3), RowState.ModifiedNew); dataGridView1.CurrentCell = null;
-
         }
         private void RefreashDatGrid(DataGridView dgw, string checkData) // hramany katarelu u toxery lracnelu process
         {
             dgw.Rows.Clear();
-
 
             SqlCommand command = new SqlCommand(checkData, dataBase.getConnection());
 
@@ -71,14 +68,10 @@ namespace CoffeShop
             }
             dataReader.Close();
             dataGridView1.CurrentCell = null;
-
         }
-
         private void Form2_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.WriteOut". При необходимости она может быть перемещена или удалена.
             this.writeOutTableAdapter.Fill(this.databaseDataSet.WriteOut);
-            //this.productIngridientsTableAdapter.Fill(this.database1DataSet.ProductIngridients);
             ImageLoad();
             CreateColumns();
             CreateColumnsFood();
@@ -99,7 +92,6 @@ namespace CoffeShop
         {
             InitializeComponent();
         }
-
         static public void UnVisibleFirstRow(DataGridView dataGridView1)
         {
             foreach (DataGridViewRow dr in dataGridView1.Rows)
@@ -110,7 +102,6 @@ namespace CoffeShop
                 }
             }
         }
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selectidRow = e.RowIndex; // toxery buttoni mej dnelu processy
@@ -123,7 +114,6 @@ namespace CoffeShop
                 priceTextBox.Text = row.Cells[3].Value.ToString();
             }
         }
-
         private void refreshButton_Click(object sender, EventArgs e)
         {
             string checkData = $"SELECT Id,Type,Name,Price FROM Product_Adder ";
@@ -131,11 +121,9 @@ namespace CoffeShop
             CleareTextBoxes();
             UnVisibleFirstRow(dataGridView1);
         }
-
         private void AddButton_Click(object sender, EventArgs e)
         {
             //apranq avelacnelu pahy
-
             var type = TypeTextBox.Text;
             var name = NameTextBox.Text;
             int autoId;
@@ -145,7 +133,6 @@ namespace CoffeShop
             int id = dataBase.GetLastId(addLastId); // product adderi verji idin
             if (Ingridients_Form.flagAdder == true)
             {
-
                 if (int.TryParse(priceTextBox.Text, out price)) // verji idnery qtnum enq u 
                 {
                     var addDate = $"INSERT INTO Product_Adder (Id,Type,Name,Price)VALUES ('{id}',N'{type}',N'{name}',N'{price}')";
@@ -156,7 +143,6 @@ namespace CoffeShop
                     ClearListDates(IngridForSale.nameListForLabel, IngridForSale.countListToSendBase, IngridForSale.idListToSendBase);
 
                     MessageBox.Show($"The  product  added successfully!", "Successful Operation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
                 else
                 {
@@ -167,11 +153,7 @@ namespace CoffeShop
             {
                 MessageBox.Show("Please add ingredients", "Invalid Format", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-
         }
-
         private void Search(DataGridView dgw)//searchi pahy
         {
             dgw.Rows.Clear();
@@ -188,9 +170,7 @@ namespace CoffeShop
                 ReadSingleRows(dgw, read);
             }
             read.Close();
-
         }
-
         private void UpdateDataBase()//Updati pahy ogtagorcvuma savi vaxt
         {
             dataBase.OpenConnecttion();
@@ -275,11 +255,8 @@ namespace CoffeShop
             UpdateDataBase();
             CleareTextBoxes();
         }
-
         private void ChangeDate()
         {
-
-
             if (dataGridView1.CurrentCell == null)
             {
                 MessageBox.Show("Choose the row", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -293,7 +270,6 @@ namespace CoffeShop
                 int id = Convert.ToInt32(dataGridView1.Rows[selectedRowIndex].Cells[0].Value);
                 if (dataGridView1.Rows[selectedRowIndex].Cells[0].Value.ToString() != string.Empty)
                 {
-
                     if (int.TryParse(priceTextBox.Text, out price))
                     {
                         dataGridView1.Rows[selectedRowIndex].SetValues(id, type, name, price);
@@ -323,7 +299,6 @@ namespace CoffeShop
             countList.Clear();
             idList.Clear();
         }
-
         private void updateButtonWritingOut_Click(object sender, EventArgs e)
         {
             RefreashDatGridWriteOut(dataGridView3, checkDataWriteOut);
@@ -339,7 +314,6 @@ namespace CoffeShop
             rocketButton.Image = System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\CoffeShop\Resourses\rocket.png");
             ClearCalculator();
         }
-
         private bool CheckElementsNotString(
            string rent,
            string salary,
@@ -381,17 +355,12 @@ namespace CoffeShop
                 Convert.ToInt32(saleProductCount) >0 && 
                 Convert.ToInt32(minCountOfSales)>0 &&
                 Convert.ToInt32(workDays)>0)
-
-
             {
                 return true;
             }
             else { return false; }
 
         }
-
-        
-
         private void calculateButton_Click(object sender, EventArgs e)
         {
           if(  CheckElementsNotString(
@@ -432,23 +401,18 @@ namespace CoffeShop
             costPriceProductTextBox.Text = "0";
             otherTextBox.Text = "0";
         }
-
         private void clearButton_Click(object sender, EventArgs e)
         {
             ClearCalculator();
         }
-
         private void clearButton_MouseHover(object sender, EventArgs e)
         {
             toolTip2.Show("Clear text boxes", clearButton);
         }
-
         private void rocketButton_Click(object sender, EventArgs e)
         {
-
             ConstDatasCalculator();
         }
-
         private void ConstDatasCalculator()
         {
             List<string> datas = new List<string>();
@@ -477,29 +441,22 @@ namespace CoffeShop
             workDayTextBox.Text = datas[7];
             otherTextBox.Text = datas[8];
         }
-
         private void rocketButton_MouseHover(object sender, EventArgs e)
         {
             toolTip2.Show("Add last main datas", rocketButton);
         }
-
         private void warningPanel_MouseHover(object sender, EventArgs e)
         {
             toolTip2.Show("There are few products in the list", warningPanel);
         }
-
-        
-
         private void PriceButton_MouseHover(object sender, EventArgs e)
         {
             toolTip2.Show("Calculate the cost price of the product",PriceButton);
         }
-
         private void PriceButton_Click(object sender, EventArgs e)
         {
             CalculateCostPrice product = new CalculateCostPrice();
             product.Show();
-
         }
     }
 }
