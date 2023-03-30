@@ -83,13 +83,13 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Analayse.cs">
+    <Compile Include="ClassesAndForms\Analayse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CalculateCostPrice.cs">
+    <Compile Include="ClassesAndForms\CalculateCostPrice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CalculateCostPrice.Designer.cs">
+    <Compile Include="ClassesAndForms\CalculateCostPrice.Designer.cs">
       <DependentUpon>CalculateCostPrice.cs</DependentUpon>
     </Compile>
     <Compile Include="Database1DataSet.Designer.cs">
@@ -97,60 +97,60 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseClass.cs" />
+    <Compile Include="ClassesAndForms\DatabaseClass.cs" />
     <Compile Include="DatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Employer.cs">
+    <Compile Include="ClassesAndForms\Employer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Employer.Designer.cs">
+    <Compile Include="ClassesAndForms\Employer.Designer.cs">
       <DependentUpon>Employer.cs</DependentUpon>
     </Compile>
-    <Compile Include="IngridForSale.cs" />
-    <Compile Include="PriceCalculator.cs" />
-    <Compile Include="ProductPanel.cs">
+    <Compile Include="ClassesAndForms\IngridForSale.cs" />
+    <Compile Include="ClassesAndForms\PriceCalculator.cs" />
+    <Compile Include="ClassesAndForms\ProductPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ingridients_Form.cs">
+    <Compile Include="ClassesAndForms\Ingridients_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ingridients_Form.Designer.cs">
+    <Compile Include="ClassesAndForms\Ingridients_Form.Designer.cs">
       <DependentUpon>Ingridients_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductClass.cs" />
-    <Compile Include="AuthenticationPanel.cs">
+    <Compile Include="ClassesAndForms\ProductClass.cs" />
+    <Compile Include="ClassesAndForms\AuthenticationPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AuthenticationPanel.Designer.cs">
+    <Compile Include="ClassesAndForms\AuthenticationPanel.Designer.cs">
       <DependentUpon>AuthenticationPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminPanel.cs">
+    <Compile Include="ClassesAndForms\AdminPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminPanel.Designer.cs">
+    <Compile Include="ClassesAndForms\AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WriteOut.cs">
+    <Compile Include="ClassesAndForms\WriteOut.cs">
       <SubType>Form</SubType>
     </Compile>
-    <EmbeddedResource Include="CalculateCostPrice.resx">
+    <EmbeddedResource Include="ClassesAndForms\CalculateCostPrice.resx">
       <DependentUpon>CalculateCostPrice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Employer.resx">
+    <EmbeddedResource Include="ClassesAndForms\Employer.resx">
       <DependentUpon>Employer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AuthenticationPanel.resx">
+    <EmbeddedResource Include="ClassesAndForms\AuthenticationPanel.resx">
       <DependentUpon>AuthenticationPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminPanel.resx">
+    <EmbeddedResource Include="ClassesAndForms\AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ingridients_Form.resx">
+    <EmbeddedResource Include="ClassesAndForms\Ingridients_Form.resx">
       <DependentUpon>Ingridients_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
